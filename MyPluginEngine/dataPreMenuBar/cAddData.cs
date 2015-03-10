@@ -25,7 +25,7 @@ namespace dataPreMenuBar
         private IMapControlDefault _MapControl;
         public cAddData()
         {
-            string str = @"..\Data\Image\MainTools\adddata.png";
+            string str = @"..\Data\Image\MainTools\addData.png";
             if (System.IO.File.Exists(str))
                 m_hBitmap = new Bitmap(str);
             else

@@ -25,7 +25,7 @@ namespace MyMainTools
 
         public cAddData()
         {
-            string str = @"..\Data\Image\MainTools\adddata.ico";
+            string str = @"..\Data\Image\MainTools\addData.ico";
             if (System.IO.File.Exists(str))
                 m_hBitmap = new Bitmap(str);
             else

@@ -8,3 +8,13 @@ E:\编程\arcgis engine\MyPluginEngine\dataPreMenuBar\obj\Debug\dataPreMenuBar.d
 E:\编程\arcgis engine\MyPluginEngine\dataPreMenuBar\obj\Debug\dataPreMenuBar.pdb
 E:\编程\arcgis engine\MyPluginEngine\dataPreMenuBar\obj\Debug\dataPreMenuBar.SelectByAttrFrm.resources
 E:\编程\arcgis engine\MyPluginEngine\dataPreMenuBar\obj\Debug\dataPreMenuBar.csproj.GenerateResource.Cache
+D:\GitHub\PluginEngine\MyPluginEngine\dataPreMenuBar\bin\Debug\dataPreMenuBar.dll
+D:\GitHub\PluginEngine\MyPluginEngine\dataPreMenuBar\bin\Debug\dataPreMenuBar.pdb
+D:\GitHub\PluginEngine\MyPluginEngine\dataPreMenuBar\bin\Debug\MyPluginEngine.dll
+D:\GitHub\PluginEngine\MyPluginEngine\dataPreMenuBar\bin\Debug\log4net.dll
+D:\GitHub\PluginEngine\MyPluginEngine\dataPreMenuBar\bin\Debug\MyPluginEngine.pdb
+D:\GitHub\PluginEngine\MyPluginEngine\dataPreMenuBar\obj\Debug\dataPreMenuBar.csprojResolveAssemblyReference.cache
+D:\GitHub\PluginEngine\MyPluginEngine\dataPreMenuBar\obj\Debug\dataPreMenuBar.SelectByAttrFrm.resources
+D:\GitHub\PluginEngine\MyPluginEngine\dataPreMenuBar\obj\Debug\dataPreMenuBar.csproj.GenerateResource.Cache
+D:\GitHub\PluginEngine\MyPluginEngine\dataPreMenuBar\obj\Debug\dataPreMenuBar.dll
+D:\GitHub\PluginEngine\MyPluginEngine\dataPreMenuBar\obj\Debug\dataPreMenuBar.pdb

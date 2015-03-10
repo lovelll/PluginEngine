@@ -84,8 +84,13 @@ namespace MyMainGIS
 
             //让MapControl和PageLatoutControl保存同步
             m_controlsSynchronizer = new ControlsSynchronizer(_mapControl, _pageLayoutControl);
-            m_controlsSynchronizer.BindControls(true);
+            
+            //在同步是同时设置好与TOCControl和ToolBarControl的buddy
             m_controlsSynchronizer.AddFrameWorkControl(axTOCControl1.Object);
+            m_controlsSynchronizer.AddFrameWorkControl(axToolbarControl1.Object);
+            
+            m_controlsSynchronizer.BindControls(true);
+
 
             //TOCControl的esriTOOControlItemMap被右键点击后弹出的快捷菜单
             _mapMenu = new ToolbarMenuClass();
@@ -447,7 +452,7 @@ namespace MyMainGIS
 
             MyPluginEngine.ICommand cmd = _CommandCol[strKey];
             ////在状态栏显示插件信息
-            this.statusButton1.Text = cmd.Message;
+            this.statusButton1.Text = "当前操作："+ cmd.Message;
             if (null != pTemp)
             {
                 pTemp.Checked = true;
@@ -483,7 +488,7 @@ namespace MyMainGIS
             //第一次按下
             if (_App.CurrentTool == null && _mapControl.CurrentTool == null && _pageLayoutControl.CurrentTool == null)
             {
-                statusButton1.Text = tool.Message;
+                statusButton1.Text = "当前操作：" + tool.Message;
                 if (null != pTemp)
                 {
                     pTemp.Checked = true;
@@ -530,7 +535,7 @@ namespace MyMainGIS
                         _App.MapControl.CurrentTool = null;
                     }
                     //设置后一个Tool的状态
-                    statusButton1.Text = tool.Message;
+                    statusButton1.Text = "当前操作：" + tool.Message;
                     if (null != pTemp)
                     {
                         pTemp.Checked = false;
@@ -857,11 +862,11 @@ namespace MyMainGIS
             {
                 return;
             }
-            if (tabControl1.SelectedTab.Name.ToUpper().Equals("MAPTAB"))
+            if (tabControl1.SelectedTab.Name.Equals("mapTab"))
             {
                 m_controlsSynchronizer.ActivateMap();
             }
-            else if (tabControl1.SelectedTab.Name.ToUpper().Equals("PAGETAB"))
+            else if (tabControl1.SelectedTab.Name.Equals("pageTab"))
             {
                 m_controlsSynchronizer.ActivatePageLayout();
             }

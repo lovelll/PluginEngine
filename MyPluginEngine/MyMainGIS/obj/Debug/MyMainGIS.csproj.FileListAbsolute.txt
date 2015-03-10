@@ -14,3 +14,19 @@ E:\编程\arcgis engine\MyPluginEngine\MyMainGIS\obj\Debug\MyMainGIS.exe
 E:\编程\arcgis engine\MyPluginEngine\MyMainGIS\obj\Debug\MyMainGIS.pdb
 E:\编程\arcgis engine\MyPluginEngine\MyMainGIS\bin\Debug\dataPreMenuBar.dll
 E:\编程\arcgis engine\MyPluginEngine\MyMainGIS\bin\Debug\dataPreMenuBar.pdb
+D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\MyMainGIS.exe.config
+D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\obj\Debug\MyMainGIS.exe
+D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\obj\Debug\MyMainGIS.pdb
+D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\obj\Debug\MyMainGIS.csprojResolveAssemblyReference.cache
+D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\obj\Debug\MyMainGIS.MainGIS.resources
+D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\obj\Debug\MyMainGIS.Properties.Resources.resources
+D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\obj\Debug\MyMainGIS.csproj.GenerateResource.Cache
+D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\MyMainGIS.exe
+D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\MyMainGIS.pdb
+D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\dataPreMenuBar.dll
+D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\MyMainTools.dll
+D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\MyPluginEngine.dll
+D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\log4net.dll
+D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\dataPreMenuBar.pdb
+D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\MyMainTools.pdb
+D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\MyPluginEngine.pdb

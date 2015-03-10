@@ -61,7 +61,7 @@ namespace MyPluginEngine
         /// <summary>
         /// 主程序窗体中的状态栏
         /// </summary>
-        DevComponents.DotNetBar.Metro.MetroStatusBar StatusBar { get; set; }
+        DevComponents.DotNetBar.Bar StatusBar { get; set; }
         /// <summary>
         /// 主程序UI界面的Visible属性
         /// </summary>

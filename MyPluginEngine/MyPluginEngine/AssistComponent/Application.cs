@@ -34,7 +34,7 @@ namespace MyPluginEngine
         private IPageLayoutControlDefault _PageLayoutControl;
         private string _Name;
         private Form _MainPlatfrom;
-        private DevComponents.DotNetBar.Metro.MetroStatusBar _StatusBar;
+        private DevComponents.DotNetBar.Bar _StatusBar;
         private bool _Visible;
 
 
@@ -161,7 +161,7 @@ namespace MyPluginEngine
         /// <summary>
         /// 主程序窗体中的状态栏
         /// </summary>
-        public DevComponents.DotNetBar.Metro.MetroStatusBar StatusBar
+        public DevComponents.DotNetBar.Bar StatusBar
         {
             get
             {

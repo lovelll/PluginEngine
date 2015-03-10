@@ -113,6 +113,11 @@ namespace MyMainGIS.Library
                     {
                         ((ITOCControl)obj).SetBuddyControl(buddy);
                     }
+                    else if (obj is IToolbarControl)
+                    {
+                        ((IToolbarControl)obj).SetBuddyControl(buddy);
+                    }
+
                 }
             }
             catch (Exception ex)
@@ -137,7 +142,9 @@ namespace MyMainGIS.Library
 
                 m_IsMapCtrlactive = true;
                 //将MapControl控件设置为TOCControl的Buddy控件
+                //将MapControl控件设置为ToolBarControl的Buddy控件
                 SetBuddies(m_mapControl.Object);
+                
             }
             catch (Exception ex)
             {
@@ -161,6 +168,7 @@ namespace MyMainGIS.Library
 
                 m_IsMapCtrlactive = false;
                 //将MapControl控件设置为TOCControl的Buddy控件
+                //将MapControl控件设置为ToolBarControl的Buddy控件
                 SetBuddies(m_pageLayoutControl.Object);
             }
             catch (Exception ex)
