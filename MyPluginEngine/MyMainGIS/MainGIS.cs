@@ -721,9 +721,15 @@ namespace MyMainGIS
         }
 
         #endregion
-
+        // rgb 选择需要重构，这里只写了功能，需要与快捷键一起来进行包装
+        // 注意，这里currentIndex 变量比较无奈，是为了记录当前选的波段。
+        // 重构后要去了这个变量。
+        int currentIndex = 0;
+        object legend;
+        ILayer currentLayer = null;
         private void axTOCControl_OnMouseDown(object sender, ITOCControlEvents_OnMouseDownEvent e)
         {
+            
             esriTOCControlItem item = esriTOCControlItem.esriTOCControlItemNone;
             IBasicMap map = null;
             ILayer layer = null;
@@ -731,6 +737,10 @@ namespace MyMainGIS
             object index = null;
 
             _tocControl.HitTest(e.x, e.y, ref item, ref map, ref layer, ref other, ref index);
+           
+            currentIndex = (int)index;
+            legend = other;
+            currentLayer = layer;
             //确保有项目被选择
             if (item == esriTOCControlItem.esriTOCControlItemMap)
                 _tocControl.SelectItem(map, null);
@@ -749,6 +759,64 @@ namespace MyMainGIS
                     _mapMenu.PopupMenu(e.x, e.y, _tocControl.hWnd);
                 }
             }
+            //选择的是遥感影像 修改波段 RGB
+            if (item == esriTOCControlItem.esriTOCControlItemLegendClass && e.button == 1)
+            {
+                BandSelectorMenu.Items.Clear();
+                BandSelectorMenu.Items.Add("不可见");
+                ToolStripSeparator separator = new ToolStripSeparator();
+                BandSelectorMenu.Items.Add(separator);
+                IRasterLayer pRasterLayer = layer as IRasterLayer;
+                string toolItem;
+                for (int i = 0; i < pRasterLayer.BandCount;i++ )
+                {
+                    toolItem = "Band_" + (i + 1);
+                    BandSelectorMenu.Items.Add(toolItem);
+                }
+                IRasterRGBRenderer pRGBRender = pRasterLayer.Renderer as IRasterRGBRenderer;
+                ToolStripMenuItem VisuableItem = BandSelectorMenu.Items[0] as ToolStripMenuItem;
+                ToolStripMenuItem ChangeItem;
+                if ((int)index == 0)
+                {
+                    if (pRGBRender.UseRedBand == false)
+                    {
+                        VisuableItem.Checked = true;
+                    }
+                    else
+                    {
+                        ChangeItem = BandSelectorMenu.Items[pRGBRender.RedBandIndex + 2] as ToolStripMenuItem;
+                        ChangeItem.Checked = true;
+                    }
+                }
+                if ((int)index == 1)
+                {
+                    if (pRGBRender.UseGreenBand == false)
+                    {
+                        VisuableItem.Checked = true;
+                    }
+                    else
+                    {
+                        ChangeItem = BandSelectorMenu.Items[pRGBRender.GreenBandIndex + 2] as ToolStripMenuItem;
+                        ChangeItem.Checked = true;
+                    }
+                }
+                if ((int)index == 2)
+                {
+                    if (pRGBRender.UseBlueBand == false)
+                    {
+                        VisuableItem.Checked = true;
+                    }
+                    else
+                    {
+                        ChangeItem = BandSelectorMenu.Items[pRGBRender.BlueBandIndex + 2] as ToolStripMenuItem;
+                        ChangeItem.Checked = true;
+                    }
+                }
+
+
+                BandSelectorMenu.Show(axTOCControl1,e.x,e.y);
+            }
+
             //选择的是 Layer
             if (item == esriTOCControlItem.esriTOCControlItemLayer)
             {
@@ -794,7 +862,116 @@ namespace MyMainGIS
                 //dataGridView.Refresh();
             }
         }
+        IRasterRGBRenderer pRGBRender = new RasterRGBRendererClass();
+        private void BandSelectorMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            string m_sBandName = e.ClickedItem.ToString();
+            int index = Convert.ToInt32(currentIndex);
+            //由于弹出式菜单中第一项设置为"不可见"，表征波段索引的bandIndex取值从2开始
+            int bandIndex = BandSelectorMenu.Items.IndexOf(e.ClickedItem);
+            //string RedLabel, GreenLabel, BlueLabel;
 
+            //ILegendGroup pLg = legend as ILegendGroup;          //当前图层所有图例的集合
+            //ILegendClass pLc = pLg.get_Class(index);          //用于管理图例，包括名称和符号
+            IRasterLayer pRasterLayer = currentLayer as IRasterLayer;
+            if (pRasterLayer == null) return;
+            //IRasterRGBRenderer pRGBRender = pRasterLayer.Renderer as IRasterRGBRenderer;
+           
+            IRasterRenderer pRasterRender = pRGBRender as IRasterRenderer;
+            pRasterRender.Raster = pRasterLayer as IRaster;
+            pRasterRender.Update();
+
+
+            //RedIndex = pRGBRender.RedBandIndex;
+            //GreenIndex = pRGBRender.GreenBandIndex;
+            //BlueIndex = pRGBRender.BlueBandIndex;
+            //RedLabel = pLg.get_Class(0).Label;
+            //GreenLabel = pLg.get_Class(1).Label;
+            //BlueLabel = pLg.get_Class(2).Label;
+
+            ToolStripMenuItem VisuableItem = BandSelectorMenu.Items[0] as ToolStripMenuItem;
+            //修改各通道的显示波段
+            if (index == 0)
+            {
+                if (m_sBandName == "不可见")
+                {
+                    pRGBRender.UseRedBand = false;
+                    //RedLabel = "Red: NONE";
+                    //设置Checked状态
+                    VisuableItem.Checked = true;
+                }
+                else
+                {
+                    pRGBRender.UseRedBand = true;
+                    //pLc.Label = "Red: " + m_sBandName;
+                    //RedLabel = pLc.Label;
+                    //IRasterRGBRenderer中波段索引从0开始，bandIndex = 2 表示第一个波段
+                    pRGBRender.RedBandIndex = bandIndex - 2;
+                    //RedIndex = bandIndex - 2;
+                    VisuableItem.Checked = false;
+                }
+            }
+            else if (index == 1)
+            {
+                if (m_sBandName == "不可见")
+                {
+                    //GreenLabel = "Green: NONE";
+                    pRGBRender.UseGreenBand = false;
+                    VisuableItem.Checked = true;
+                }
+                else
+                {
+                    pRGBRender.UseGreenBand = true;
+                    //pLc.Label = "Green: " + m_sBandName;
+                    //GreenLabel = pLc.Label;
+                    pRGBRender.GreenBandIndex = bandIndex - 2;
+                    //GreenIndex = bandIndex - 2;
+                    VisuableItem.Checked = false;
+                }
+            }
+            else if (index == 2)
+            {
+                if (m_sBandName == "不可见")
+                {
+                    //BlueLabel = "Blue: NONE";
+                    pRGBRender.UseBlueBand = false;
+                    VisuableItem.Checked = true;
+                }
+                else
+                {
+                    pRGBRender.UseBlueBand = true;
+                    //pLc.Label = "Blue: " + m_sBandName;
+                    //BlueLabel = pLc.Label;
+                    pRGBRender.BlueBandIndex = bandIndex - 2;
+                    //BlueIndex = bandIndex - 2;
+                    VisuableItem.Checked = false;
+                }
+            }
+            //pRGBRender.RedBandIndex = RedIndex;
+            //pRGBRender.GreenBandIndex = GreenIndex;
+            //pRGBRender.BlueBandIndex = BlueIndex;
+
+
+            pRasterRender.Update();
+            //刷新图层
+            //if (m_ViewDim == VIEW_DIM.THREE)
+            //{
+            //    IGlobeDisplayLayers pGlobeLayer = axGlobeControl.GlobeDisplay as IGlobeDisplayLayers;
+            //    pGlobeLayer.RefreshLayer(m_pSelectLayer);
+            //}
+            //else if (m_ViewDim == VIEW_DIM.TWO)
+            //{
+            //axMapControl1.Refresh();
+            pRasterLayer.Renderer = pRasterRender;
+            axMapControl1.Refresh();
+            //}
+            //pLg.get_Class(0).Label = RedLabel;          //修改Red波段显示名称，即图例名称
+            //pLg.get_Class(1).Label = GreenLabel;       //修改Green波段显示名称
+            //pLg.get_Class(2).Label = BlueLabel;          //修改Blue波段显示名称
+            axTOCControl1.Update();
+        }
+
+     
         //private void TOCPanel_SelectedPanelChanged(object sender, PanelActionEventArgs e)
         //{
         //    if (e.Panel.Name == "LayerPanel" && _mapControl != null)
@@ -880,6 +1057,9 @@ namespace MyMainGIS
             }
             MessageBox.Show("Test");
         }
+
+     
+       
 
 
     }

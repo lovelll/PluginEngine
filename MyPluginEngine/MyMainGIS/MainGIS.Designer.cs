@@ -58,6 +58,7 @@
             this.dockSite6 = new DevComponents.DotNetBar.DockSite();
             this.dockSite7 = new DevComponents.DotNetBar.DockSite();
             this.dockSite3 = new DevComponents.DotNetBar.DockSite();
+            this.BandSelectorMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uiStatusBar)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -76,12 +77,14 @@
             // 
             // MainMenu
             // 
+            this.MainMenu.BackColor = System.Drawing.Color.LightGray;
             // 
             // 
             // 
             this.MainMenu.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.MainMenu.CaptionVisible = true;
             this.MainMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MainMenu.ForeColor = System.Drawing.Color.Black;
             this.MainMenu.KeyTipsFont = new System.Drawing.Font("Tahoma", 7F);
             this.MainMenu.Location = new System.Drawing.Point(5, 1);
             this.MainMenu.Name = "MainMenu";
@@ -417,6 +420,12 @@
             this.dockSite3.TabIndex = 5;
             this.dockSite3.TabStop = false;
             // 
+            // BandSelectorMenu
+            // 
+            this.BandSelectorMenu.Name = "BandSelectorMenu";
+            this.BandSelectorMenu.Size = new System.Drawing.Size(153, 26);
+            this.BandSelectorMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.BandSelectorMenu_ItemClicked);
+            // 
             // MainGIS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -486,6 +495,7 @@
         private DevComponents.DotNetBar.ButtonItem statusButton2;
         private DevComponents.DotNetBar.ButtonItem statusButton3;
         private ESRI.ArcGIS.Controls.AxToolbarControl axToolbarControl1;
+        private System.Windows.Forms.ContextMenuStrip BandSelectorMenu;
     }
 }
 

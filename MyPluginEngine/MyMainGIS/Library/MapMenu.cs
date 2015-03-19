@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.Controls;
 using ESRI.ArcGIS.Display;
@@ -18,7 +17,6 @@ using ESRI.ArcGIS.ADF;
  * toccontrol 上右键时弹出快捷菜单
  * 
  * */
-
 namespace MyMainGIS.Library
 {
     public class MapMenu : ESRI.ArcGIS.ADF.BaseClasses.BaseCommand, ICommandSubType
