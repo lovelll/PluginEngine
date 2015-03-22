@@ -50,13 +50,21 @@
             treeNode10,
             treeNode11,
             treeNode12});
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(featureRenderFrm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.LayerGroup = new System.Windows.Forms.GroupBox();
             this.SimpleRender = new System.Windows.Forms.GroupBox();
+            this.LayerGroup = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbxLayers2Symbolize = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSymbolize = new System.Windows.Forms.Button();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.SimpleRender.SuspendLayout();
+            this.LayerGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -117,17 +125,10 @@
             this.treeView1.Size = new System.Drawing.Size(186, 341);
             this.treeView1.TabIndex = 0;
             // 
-            // LayerGroup
-            // 
-            this.LayerGroup.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LayerGroup.Location = new System.Drawing.Point(0, 0);
-            this.LayerGroup.Name = "LayerGroup";
-            this.LayerGroup.Size = new System.Drawing.Size(368, 45);
-            this.LayerGroup.TabIndex = 0;
-            this.LayerGroup.TabStop = false;
-            // 
             // SimpleRender
             // 
+            this.SimpleRender.Controls.Add(this.btnSymbolize);
+            this.SimpleRender.Controls.Add(this.pictureBox1);
             this.SimpleRender.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SimpleRender.Location = new System.Drawing.Point(0, 45);
             this.SimpleRender.Name = "SimpleRender";
@@ -135,6 +136,55 @@
             this.SimpleRender.TabIndex = 1;
             this.SimpleRender.TabStop = false;
             this.SimpleRender.Text = "单一符号";
+            // 
+            // LayerGroup
+            // 
+            this.LayerGroup.Controls.Add(this.cbxLayers2Symbolize);
+            this.LayerGroup.Controls.Add(this.label2);
+            this.LayerGroup.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LayerGroup.Location = new System.Drawing.Point(0, 0);
+            this.LayerGroup.Name = "LayerGroup";
+            this.LayerGroup.Size = new System.Drawing.Size(368, 45);
+            this.LayerGroup.TabIndex = 0;
+            this.LayerGroup.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(35, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 12);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "选择符号化图层：";
+            // 
+            // cbxLayers2Symbolize
+            // 
+            this.cbxLayers2Symbolize.FormattingEnabled = true;
+            this.cbxLayers2Symbolize.Location = new System.Drawing.Point(172, 17);
+            this.cbxLayers2Symbolize.Name = "cbxLayers2Symbolize";
+            this.cbxLayers2Symbolize.Size = new System.Drawing.Size(162, 20);
+            this.cbxLayers2Symbolize.TabIndex = 11;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(23, 48);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(146, 95);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnSymbolize
+            // 
+            this.btnSymbolize.Location = new System.Drawing.Point(247, 48);
+            this.btnSymbolize.Name = "btnSymbolize";
+            this.btnSymbolize.Size = new System.Drawing.Size(66, 23);
+            this.btnSymbolize.TabIndex = 15;
+            this.btnSymbolize.Text = "符号化";
+            this.btnSymbolize.UseVisualStyleBackColor = true;
             // 
             // featureRenderFrm
             // 
@@ -148,6 +198,10 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
+            this.SimpleRender.ResumeLayout(false);
+            this.LayerGroup.ResumeLayout(false);
+            this.LayerGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -158,6 +212,10 @@
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.GroupBox SimpleRender;
         private System.Windows.Forms.GroupBox LayerGroup;
+        private System.Windows.Forms.Button btnSymbolize;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox cbxLayers2Symbolize;
+        private System.Windows.Forms.Label label2;
 
     }
 }
