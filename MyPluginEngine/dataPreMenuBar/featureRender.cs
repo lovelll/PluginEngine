@@ -7,25 +7,19 @@ using System.Drawing;
 using ESRI.ArcGIS.ADF;
 using ESRI.ArcGIS.Controls;
 using ESRI.ArcGIS.esriSystem;
-using ESRI.ArcGIS.SystemUI;
-
-using MyPluginEngine;
 
 namespace dataPreMenuBar
 {
-    /// <summary>
-    /// 添加数据
-    /// </summary>
-    public class cAddData : MyPluginEngine.ICommand
+    class featureRender : MyPluginEngine.ICommand
     {
         private MyPluginEngine.IApplication hk;
         private System.Drawing.Bitmap m_hBitmap;
 
-        private ESRI.ArcGIS.SystemUI.ICommand cmd = null;
-        //private IMapControlDefault _MapControl;
-        public cAddData()
+        //private ESRI.ArcGIS.SystemUI.ICommand cmd = null;
+        private IMapControlDefault _MapControl;
+        public featureRender()
         {
-            string str = @"..\Data\Image\MainTools\addData.png";
+            string str = @"..\Data\Image\MainTools\featureRender.png";
             if (System.IO.File.Exists(str))
                 m_hBitmap = new Bitmap(str);
             else
@@ -41,7 +35,7 @@ namespace dataPreMenuBar
 
         public string Caption
         {
-            get { return "添加数据"; }
+            get { return "专题制图"; }
         }
 
         public string Category
@@ -71,17 +65,19 @@ namespace dataPreMenuBar
 
         public string Message
         {
-            get { return "添加数据"; }
+            get { return "专题制图"; }
         }
 
         public string Name
         {
-            get { return "AddData"; }
+            get { return "featureRender"; }
         }
 
         public void OnClick()
         {
-            cmd.OnClick();
+            //cmd.OnClick();
+            featureRenderFrm form = new featureRenderFrm(_MapControl);
+            form.Show();
         }
 
         public void OnCreate(MyPluginEngine.IApplication hook)
@@ -89,15 +85,15 @@ namespace dataPreMenuBar
             if (hook != null)
             {
                 this.hk = hook;
-                cmd = new ControlsAddDataCommandClass();
-                cmd.OnCreate(this.hk.MapControl);
-                //_MapControl = this.hk.MapControl;
+                //cmd = new ControlsAddDataCommandClass();
+                //cmd.OnCreate(this.hk.MapControl);
+                _MapControl = this.hk.MapControl;
             }
         }
 
         public string Tooltip
         {
-            get { return "添加数据"; }
+            get { return "专题制图"; }
         }
 
         #endregion

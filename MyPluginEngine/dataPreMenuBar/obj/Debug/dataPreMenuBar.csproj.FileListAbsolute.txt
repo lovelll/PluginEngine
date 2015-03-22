@@ -18,3 +18,4 @@ D:\GitHub\PluginEngine\MyPluginEngine\dataPreMenuBar\obj\Debug\dataPreMenuBar.Se
 D:\GitHub\PluginEngine\MyPluginEngine\dataPreMenuBar\obj\Debug\dataPreMenuBar.csproj.GenerateResource.Cache
 D:\GitHub\PluginEngine\MyPluginEngine\dataPreMenuBar\obj\Debug\dataPreMenuBar.dll
 D:\GitHub\PluginEngine\MyPluginEngine\dataPreMenuBar\obj\Debug\dataPreMenuBar.pdb
+D:\GitHub\PluginEngine\MyPluginEngine\dataPreMenuBar\obj\Debug\dataPreMenuBar.featureRenderFrm.resources

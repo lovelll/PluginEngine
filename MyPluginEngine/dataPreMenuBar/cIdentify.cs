@@ -43,7 +43,7 @@ namespace dataPreMenuBar
 
         public string Category
         {
-            get { return "处理1"; }
+            get { return "处理"; }
         }
 
         public bool Checked

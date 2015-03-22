@@ -31,6 +31,10 @@ namespace dataPreMenuBar
                     itemDef.ID = "dataPreMenuBar.selectByAttr";
                     itemDef.Group = false;
                     break;
+                case 3:
+                    itemDef.ID = "dataPreMenuBar.featureRender";
+                    itemDef.Group = false;
+                    break;
               
                 ////case 1:
                 //    //itemDef.ID = "";
@@ -44,7 +48,7 @@ namespace dataPreMenuBar
 
         public long ItemCount
         {
-            get { return 3; }
+            get { return 4; }
         }
 
         public string Name
