@@ -17,6 +17,7 @@ namespace dataPreMenuBar
 
         //private ESRI.ArcGIS.SystemUI.ICommand cmd = null;
         private IMapControlDefault _MapControl;
+        private ITOCControlDefault _TOCControl;
         public featureRender()
         {
             string str = @"..\Data\Image\MainTools\featureRender.png";
@@ -76,7 +77,7 @@ namespace dataPreMenuBar
         public void OnClick()
         {
             //cmd.OnClick();
-            featureRenderFrm form = new featureRenderFrm(_MapControl);
+            featureRenderFrm form = new featureRenderFrm(_MapControl, _TOCControl);
             form.Show();
         }
 
@@ -88,6 +89,7 @@ namespace dataPreMenuBar
                 //cmd = new ControlsAddDataCommandClass();
                 //cmd.OnCreate(this.hk.MapControl);
                 _MapControl = this.hk.MapControl;
+                _TOCControl = this.hk.TOCControl;
             }
         }
 

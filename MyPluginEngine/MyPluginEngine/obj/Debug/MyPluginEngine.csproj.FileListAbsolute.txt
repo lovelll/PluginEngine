@@ -9,6 +9,5 @@ D:\GitHub\PluginEngine\MyPluginEngine\MyPluginEngine\bin\Debug\MyPluginEngine.dl
 D:\GitHub\PluginEngine\MyPluginEngine\MyPluginEngine\bin\Debug\MyPluginEngine.dll
 D:\GitHub\PluginEngine\MyPluginEngine\MyPluginEngine\bin\Debug\MyPluginEngine.pdb
 D:\GitHub\PluginEngine\MyPluginEngine\MyPluginEngine\bin\Debug\log4net.dll
-D:\GitHub\PluginEngine\MyPluginEngine\MyPluginEngine\obj\Debug\MyPluginEngine.csprojResolveAssemblyReference.cache
 D:\GitHub\PluginEngine\MyPluginEngine\MyPluginEngine\obj\Debug\MyPluginEngine.dll
 D:\GitHub\PluginEngine\MyPluginEngine\MyPluginEngine\obj\Debug\MyPluginEngine.pdb

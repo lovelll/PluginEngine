@@ -76,6 +76,7 @@ namespace MyMainGIS
             _App.StatusBar = this.uiStatusBar;
             _App.MapControl = _mapControl;
             _App.PageLayoutControl = _pageLayoutControl;
+            _App.TOCControl = _tocControl;
             _App.MainPlatfrom = this;
             _App.Caption = this.Text;
             _App.Visible = this.Visible;
@@ -83,6 +84,7 @@ namespace MyMainGIS
             _App.MainDataSet = _DataSet;
 
             //让MapControl和PageLatoutControl保存同步
+            axTOCControl1.SetBuddyControl(_mapControl);
             m_controlsSynchronizer = new ControlsSynchronizer(_mapControl, _pageLayoutControl);
             
             //在同步是同时设置好与TOCControl和ToolBarControl的buddy
@@ -638,7 +640,7 @@ namespace MyMainGIS
 
         private void axMapControl_OnViewRefreshed(object sender, IMapControlEvents2_OnViewRefreshedEvent e)
         {
-            if (_App.CurrentTool != null)
+            if (_App != null && _App.CurrentTool != null)
             {
                 _Tool = _ToolCol[_App.CurrentTool];
                 _Tool.Refresh(0);
@@ -651,7 +653,7 @@ namespace MyMainGIS
 
         private void axPageLayoutControl_OnMouseDown(object sender, IPageLayoutControlEvents_OnMouseDownEvent e)
         {
-            if (_App.CurrentTool != null)
+            if (_App != null && _App.CurrentTool != null)
             {
                 _Tool = _ToolCol[_App.CurrentTool];
                 //左键
@@ -713,7 +715,7 @@ namespace MyMainGIS
 
         private void axPageLayoutControl_OnViewRefreshed(object sender, IPageLayoutControlEvents_OnViewRefreshedEvent e)
         {
-            if (_App.CurrentTool != null)
+            if (_App != null && _App.CurrentTool != null)
             {
                 _Tool = _ToolCol[_App.CurrentTool];
                 _Tool.Refresh(0);
@@ -737,8 +739,15 @@ namespace MyMainGIS
             object index = null;
 
             _tocControl.HitTest(e.x, e.y, ref item, ref map, ref layer, ref other, ref index);
-           
-            currentIndex = (int)index;
+            if (index != null)
+            {
+                currentIndex = (int)index;
+            }
+            else 
+            {
+                currentIndex = 0;
+            }
+            
             legend = other;
             currentLayer = layer;
             //确保有项目被选择
@@ -762,59 +771,64 @@ namespace MyMainGIS
             //选择的是遥感影像 修改波段 RGB
             if (item == esriTOCControlItem.esriTOCControlItemLegendClass && e.button == 1)
             {
-                BandSelectorMenu.Items.Clear();
-                BandSelectorMenu.Items.Add("不可见");
-                ToolStripSeparator separator = new ToolStripSeparator();
-                BandSelectorMenu.Items.Add(separator);
                 IRasterLayer pRasterLayer = layer as IRasterLayer;
-                string toolItem;
-                for (int i = 0; i < pRasterLayer.BandCount;i++ )
+                if (pRasterLayer.BandCount > 1) //排除单波段影像。
                 {
-                    toolItem = "Band_" + (i + 1);
-                    BandSelectorMenu.Items.Add(toolItem);
-                }
-                IRasterRGBRenderer pRGBRender = pRasterLayer.Renderer as IRasterRGBRenderer;
-                ToolStripMenuItem VisuableItem = BandSelectorMenu.Items[0] as ToolStripMenuItem;
-                ToolStripMenuItem ChangeItem;
-                if ((int)index == 0)
-                {
-                    if (pRGBRender.UseRedBand == false)
+                    BandSelectorMenu.Items.Clear();
+                    BandSelectorMenu.Items.Add("不可见");
+                    ToolStripSeparator separator = new ToolStripSeparator();
+                    BandSelectorMenu.Items.Add(separator);
+
+                    string toolItem;
+                    for (int i = 0; i < pRasterLayer.BandCount; i++)
                     {
-                        VisuableItem.Checked = true;
+                        toolItem = "Band_" + (i + 1);
+                        BandSelectorMenu.Items.Add(toolItem);
                     }
-                    else
+                    IRasterRGBRenderer pRGBRender = pRasterLayer.Renderer as IRasterRGBRenderer;
+                    ToolStripMenuItem VisuableItem = BandSelectorMenu.Items[0] as ToolStripMenuItem;
+                    ToolStripMenuItem ChangeItem;
+                    if ((int)index == 0)
                     {
-                        ChangeItem = BandSelectorMenu.Items[pRGBRender.RedBandIndex + 2] as ToolStripMenuItem;
-                        ChangeItem.Checked = true;
+                        if (pRGBRender.UseRedBand == false)
+                        {
+                            VisuableItem.Checked = true;
+                        }
+                        else
+                        {
+                            ChangeItem = BandSelectorMenu.Items[pRGBRender.RedBandIndex + 2] as ToolStripMenuItem;
+                            ChangeItem.Checked = true;
+                        }
                     }
-                }
-                if ((int)index == 1)
-                {
-                    if (pRGBRender.UseGreenBand == false)
+                    if ((int)index == 1)
                     {
-                        VisuableItem.Checked = true;
+                        if (pRGBRender.UseGreenBand == false)
+                        {
+                            VisuableItem.Checked = true;
+                        }
+                        else
+                        {
+                            ChangeItem = BandSelectorMenu.Items[pRGBRender.GreenBandIndex + 2] as ToolStripMenuItem;
+                            ChangeItem.Checked = true;
+                        }
                     }
-                    else
+                    if ((int)index == 2)
                     {
-                        ChangeItem = BandSelectorMenu.Items[pRGBRender.GreenBandIndex + 2] as ToolStripMenuItem;
-                        ChangeItem.Checked = true;
+                        if (pRGBRender.UseBlueBand == false)
+                        {
+                            VisuableItem.Checked = true;
+                        }
+                        else
+                        {
+                            ChangeItem = BandSelectorMenu.Items[pRGBRender.BlueBandIndex + 2] as ToolStripMenuItem;
+                            ChangeItem.Checked = true;
+                        }
                     }
-                }
-                if ((int)index == 2)
-                {
-                    if (pRGBRender.UseBlueBand == false)
-                    {
-                        VisuableItem.Checked = true;
-                    }
-                    else
-                    {
-                        ChangeItem = BandSelectorMenu.Items[pRGBRender.BlueBandIndex + 2] as ToolStripMenuItem;
-                        ChangeItem.Checked = true;
-                    }
-                }
 
 
-                BandSelectorMenu.Show(axTOCControl1,e.x,e.y);
+                    BandSelectorMenu.Show(axTOCControl1, e.x, e.y);
+                }
+               
             }
 
             //选择的是 Layer

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using ESRI.ArcGIS;
+using ESRI.ArcGIS.esriSystem;
 
 namespace MyMainGIS
 {
@@ -22,9 +23,12 @@ namespace MyMainGIS
                     return;
                 }
             }
-          
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+
+            //IAoInitialize m_AoInitialize = new AoInitialize();
+            //esriLicenseStatus licenseStatus = esriLicenseStatus.esriLicenseUnavailable;
+            //licenseStatus = m_AoInitialize.Initialize(esriLicenseProductCode.esriLicenseProductCodeEngineGeoDB);
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainGIS());
         }
     }

@@ -43,7 +43,6 @@
             this.axTOCControl1 = new ESRI.ArcGIS.Controls.AxTOCControl();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.mapTab = new System.Windows.Forms.TabPage();
-            this.axLicenseControl1 = new ESRI.ArcGIS.Controls.AxLicenseControl();
             this.axMapControl1 = new ESRI.ArcGIS.Controls.AxMapControl();
             this.pageTab = new System.Windows.Forms.TabPage();
             this.axPageLayoutControl1 = new ESRI.ArcGIS.Controls.AxPageLayoutControl();
@@ -59,20 +58,22 @@
             this.dockSite7 = new DevComponents.DotNetBar.DockSite();
             this.dockSite3 = new DevComponents.DotNetBar.DockSite();
             this.BandSelectorMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.axLicenseControl1 = new ESRI.ArcGIS.Controls.AxLicenseControl();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uiStatusBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axTOCControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.mapTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axMapControl1)).BeginInit();
             this.pageTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axPageLayoutControl1)).BeginInit();
             this.MainTool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // MainMenu
@@ -90,7 +91,7 @@
             this.MainMenu.Name = "MainMenu";
             this.MainMenu.QuickToolbarItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.qatCustomizeItem1});
-            this.MainMenu.Size = new System.Drawing.Size(641, 130);
+            this.MainMenu.Size = new System.Drawing.Size(644, 130);
             this.MainMenu.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.MainMenu.SystemText.MaximizeRibbonText = "&Maximize the Ribbon";
             this.MainMenu.SystemText.MinimizeRibbonText = "Mi&nimize the Ribbon";
@@ -136,7 +137,7 @@
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx1.Location = new System.Drawing.Point(5, 131);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(641, 221);
+            this.panelEx1.Size = new System.Drawing.Size(644, 237);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -156,9 +157,9 @@
             this.statusButton1,
             this.statusButton2,
             this.statusButton3});
-            this.uiStatusBar.Location = new System.Drawing.Point(0, 196);
+            this.uiStatusBar.Location = new System.Drawing.Point(0, 212);
             this.uiStatusBar.Name = "uiStatusBar";
-            this.uiStatusBar.Size = new System.Drawing.Size(641, 25);
+            this.uiStatusBar.Size = new System.Drawing.Size(644, 25);
             this.uiStatusBar.Stretch = true;
             this.uiStatusBar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.uiStatusBar.TabIndex = 11;
@@ -195,7 +196,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(641, 193);
+            this.splitContainer1.Size = new System.Drawing.Size(644, 209);
             this.splitContainer1.SplitterDistance = 168;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -205,7 +206,7 @@
             this.axTOCControl1.Location = new System.Drawing.Point(0, 0);
             this.axTOCControl1.Name = "axTOCControl1";
             this.axTOCControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axTOCControl1.OcxState")));
-            this.axTOCControl1.Size = new System.Drawing.Size(168, 193);
+            this.axTOCControl1.Size = new System.Drawing.Size(168, 209);
             this.axTOCControl1.TabIndex = 0;
             this.axTOCControl1.OnMouseDown += new ESRI.ArcGIS.Controls.ITOCControlEvents_Ax_OnMouseDownEventHandler(this.axTOCControl_OnMouseDown);
             // 
@@ -217,7 +218,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(469, 193);
+            this.tabControl1.Size = new System.Drawing.Size(472, 209);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -228,19 +229,10 @@
             this.mapTab.Location = new System.Drawing.Point(4, 22);
             this.mapTab.Name = "mapTab";
             this.mapTab.Padding = new System.Windows.Forms.Padding(3);
-            this.mapTab.Size = new System.Drawing.Size(461, 167);
+            this.mapTab.Size = new System.Drawing.Size(464, 183);
             this.mapTab.TabIndex = 0;
             this.mapTab.Text = "地图";
             this.mapTab.UseVisualStyleBackColor = true;
-            // 
-            // axLicenseControl1
-            // 
-            this.axLicenseControl1.Enabled = true;
-            this.axLicenseControl1.Location = new System.Drawing.Point(47, 24);
-            this.axLicenseControl1.Name = "axLicenseControl1";
-            this.axLicenseControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axLicenseControl1.OcxState")));
-            this.axLicenseControl1.Size = new System.Drawing.Size(32, 32);
-            this.axLicenseControl1.TabIndex = 1;
             // 
             // axMapControl1
             // 
@@ -248,7 +240,7 @@
             this.axMapControl1.Location = new System.Drawing.Point(3, 3);
             this.axMapControl1.Name = "axMapControl1";
             this.axMapControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axMapControl1.OcxState")));
-            this.axMapControl1.Size = new System.Drawing.Size(455, 161);
+            this.axMapControl1.Size = new System.Drawing.Size(458, 177);
             this.axMapControl1.TabIndex = 0;
             this.axMapControl1.OnMouseDown += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseDownEventHandler(this.axMapControl_OnMouseDown);
             this.axMapControl1.OnMouseUp += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseUpEventHandler(this.axMapControl_OnMouseUp);
@@ -264,7 +256,7 @@
             this.pageTab.Location = new System.Drawing.Point(4, 22);
             this.pageTab.Name = "pageTab";
             this.pageTab.Padding = new System.Windows.Forms.Padding(3);
-            this.pageTab.Size = new System.Drawing.Size(461, 167);
+            this.pageTab.Size = new System.Drawing.Size(464, 183);
             this.pageTab.TabIndex = 1;
             this.pageTab.Text = "版式";
             this.pageTab.UseVisualStyleBackColor = true;
@@ -275,7 +267,7 @@
             this.axPageLayoutControl1.Location = new System.Drawing.Point(3, 3);
             this.axPageLayoutControl1.Name = "axPageLayoutControl1";
             this.axPageLayoutControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axPageLayoutControl1.OcxState")));
-            this.axPageLayoutControl1.Size = new System.Drawing.Size(455, 161);
+            this.axPageLayoutControl1.Size = new System.Drawing.Size(458, 177);
             this.axPageLayoutControl1.TabIndex = 0;
             this.axPageLayoutControl1.OnMouseDown += new ESRI.ArcGIS.Controls.IPageLayoutControlEvents_Ax_OnMouseDownEventHandler(this.axPageLayoutControl_OnMouseDown);
             this.axPageLayoutControl1.OnMouseUp += new ESRI.ArcGIS.Controls.IPageLayoutControlEvents_Ax_OnMouseUpEventHandler(this.axPageLayoutControl_OnMouseUp);
@@ -299,7 +291,7 @@
             this.MainTool.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
             this.MainTool.Location = new System.Drawing.Point(0, 0);
             this.MainTool.Name = "MainTool";
-            this.MainTool.Size = new System.Drawing.Size(641, 28);
+            this.MainTool.Size = new System.Drawing.Size(644, 28);
             this.MainTool.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2013;
             this.MainTool.TabIndex = 0;
             this.MainTool.Text = "itemPanel1";
@@ -310,7 +302,7 @@
             this.axToolbarControl1.Location = new System.Drawing.Point(0, 0);
             this.axToolbarControl1.Name = "axToolbarControl1";
             this.axToolbarControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axToolbarControl1.OcxState")));
-            this.axToolbarControl1.Size = new System.Drawing.Size(641, 28);
+            this.axToolbarControl1.Size = new System.Drawing.Size(644, 28);
             this.axToolbarControl1.TabIndex = 0;
             // 
             // dotNetBarManager1
@@ -341,9 +333,9 @@
             this.dockSite4.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
             this.dockSite4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dockSite4.DocumentDockContainer = new DevComponents.DotNetBar.DocumentDockContainer();
-            this.dockSite4.Location = new System.Drawing.Point(5, 352);
+            this.dockSite4.Location = new System.Drawing.Point(5, 368);
             this.dockSite4.Name = "dockSite4";
-            this.dockSite4.Size = new System.Drawing.Size(641, 0);
+            this.dockSite4.Size = new System.Drawing.Size(644, 0);
             this.dockSite4.TabIndex = 6;
             this.dockSite4.TabStop = false;
             // 
@@ -354,7 +346,7 @@
             this.dockSite1.DocumentDockContainer = new DevComponents.DotNetBar.DocumentDockContainer();
             this.dockSite1.Location = new System.Drawing.Point(5, 131);
             this.dockSite1.Name = "dockSite1";
-            this.dockSite1.Size = new System.Drawing.Size(0, 221);
+            this.dockSite1.Size = new System.Drawing.Size(0, 237);
             this.dockSite1.TabIndex = 3;
             this.dockSite1.TabStop = false;
             // 
@@ -363,9 +355,9 @@
             this.dockSite2.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
             this.dockSite2.Dock = System.Windows.Forms.DockStyle.Right;
             this.dockSite2.DocumentDockContainer = new DevComponents.DotNetBar.DocumentDockContainer();
-            this.dockSite2.Location = new System.Drawing.Point(646, 131);
+            this.dockSite2.Location = new System.Drawing.Point(649, 131);
             this.dockSite2.Name = "dockSite2";
-            this.dockSite2.Size = new System.Drawing.Size(0, 221);
+            this.dockSite2.Size = new System.Drawing.Size(0, 237);
             this.dockSite2.TabIndex = 4;
             this.dockSite2.TabStop = false;
             // 
@@ -373,9 +365,9 @@
             // 
             this.dockSite8.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
             this.dockSite8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dockSite8.Location = new System.Drawing.Point(5, 352);
+            this.dockSite8.Location = new System.Drawing.Point(5, 368);
             this.dockSite8.Name = "dockSite8";
-            this.dockSite8.Size = new System.Drawing.Size(641, 0);
+            this.dockSite8.Size = new System.Drawing.Size(644, 0);
             this.dockSite8.TabIndex = 10;
             this.dockSite8.TabStop = false;
             // 
@@ -385,7 +377,7 @@
             this.dockSite5.Dock = System.Windows.Forms.DockStyle.Left;
             this.dockSite5.Location = new System.Drawing.Point(5, 1);
             this.dockSite5.Name = "dockSite5";
-            this.dockSite5.Size = new System.Drawing.Size(0, 351);
+            this.dockSite5.Size = new System.Drawing.Size(0, 367);
             this.dockSite5.TabIndex = 7;
             this.dockSite5.TabStop = false;
             // 
@@ -393,9 +385,9 @@
             // 
             this.dockSite6.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
             this.dockSite6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dockSite6.Location = new System.Drawing.Point(646, 1);
+            this.dockSite6.Location = new System.Drawing.Point(649, 1);
             this.dockSite6.Name = "dockSite6";
-            this.dockSite6.Size = new System.Drawing.Size(0, 351);
+            this.dockSite6.Size = new System.Drawing.Size(0, 367);
             this.dockSite6.TabIndex = 8;
             this.dockSite6.TabStop = false;
             // 
@@ -405,7 +397,7 @@
             this.dockSite7.Dock = System.Windows.Forms.DockStyle.Top;
             this.dockSite7.Location = new System.Drawing.Point(5, 1);
             this.dockSite7.Name = "dockSite7";
-            this.dockSite7.Size = new System.Drawing.Size(641, 0);
+            this.dockSite7.Size = new System.Drawing.Size(644, 0);
             this.dockSite7.TabIndex = 9;
             this.dockSite7.TabStop = false;
             // 
@@ -416,22 +408,31 @@
             this.dockSite3.DocumentDockContainer = new DevComponents.DotNetBar.DocumentDockContainer();
             this.dockSite3.Location = new System.Drawing.Point(5, 1);
             this.dockSite3.Name = "dockSite3";
-            this.dockSite3.Size = new System.Drawing.Size(641, 0);
+            this.dockSite3.Size = new System.Drawing.Size(644, 0);
             this.dockSite3.TabIndex = 5;
             this.dockSite3.TabStop = false;
             // 
             // BandSelectorMenu
             // 
             this.BandSelectorMenu.Name = "BandSelectorMenu";
-            this.BandSelectorMenu.Size = new System.Drawing.Size(153, 26);
+            this.BandSelectorMenu.Size = new System.Drawing.Size(61, 4);
             this.BandSelectorMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.BandSelectorMenu_ItemClicked);
+            // 
+            // axLicenseControl1
+            // 
+            this.axLicenseControl1.Enabled = true;
+            this.axLicenseControl1.Location = new System.Drawing.Point(105, 53);
+            this.axLicenseControl1.Name = "axLicenseControl1";
+            this.axLicenseControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axLicenseControl1.OcxState")));
+            this.axLicenseControl1.Size = new System.Drawing.Size(32, 32);
+            this.axLicenseControl1.TabIndex = 1;
             // 
             // MainGIS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(651, 354);
+            this.ClientSize = new System.Drawing.Size(654, 370);
             this.Controls.Add(this.dockSite2);
             this.Controls.Add(this.dockSite1);
             this.Controls.Add(this.panelEx1);
@@ -451,16 +452,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.uiStatusBar)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.axTOCControl1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.mapTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axMapControl1)).EndInit();
             this.pageTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.axPageLayoutControl1)).EndInit();
             this.MainTool.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -473,10 +475,8 @@
         private DevComponents.DotNetBar.ButtonItem buttonItem1;
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private ESRI.ArcGIS.Controls.AxTOCControl axTOCControl1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage mapTab;
-        private ESRI.ArcGIS.Controls.AxLicenseControl axLicenseControl1;
         private ESRI.ArcGIS.Controls.AxMapControl axMapControl1;
         private System.Windows.Forms.TabPage pageTab;
         private ESRI.ArcGIS.Controls.AxPageLayoutControl axPageLayoutControl1;
@@ -496,6 +496,8 @@
         private DevComponents.DotNetBar.ButtonItem statusButton3;
         private ESRI.ArcGIS.Controls.AxToolbarControl axToolbarControl1;
         private System.Windows.Forms.ContextMenuStrip BandSelectorMenu;
+        private ESRI.ArcGIS.Controls.AxTOCControl axTOCControl1;
+        private ESRI.ArcGIS.Controls.AxLicenseControl axLicenseControl1;
     }
 }
 

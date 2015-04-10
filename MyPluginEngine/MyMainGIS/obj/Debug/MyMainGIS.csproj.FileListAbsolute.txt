@@ -30,3 +30,8 @@ D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\log4net.dll
 D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\dataPreMenuBar.pdb
 D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\MyMainTools.pdb
 D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\MyPluginEngine.pdb
+D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\AForge.dll
+D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\Accord.dll
+D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\Accord.IO.dll
+D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\Accord.Math.dll
+D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\Accord.Statistics.dll

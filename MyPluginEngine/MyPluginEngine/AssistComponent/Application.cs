@@ -32,6 +32,7 @@ namespace MyPluginEngine
         private IMapDocument _Document;
         private IMapControlDefault _MapControl;
         private IPageLayoutControlDefault _PageLayoutControl;
+        private ITOCControlDefault _TOCControl;
         private string _Name;
         private Form _MainPlatfrom;
         private DevComponents.DotNetBar.Bar _StatusBar;
@@ -128,6 +129,18 @@ namespace MyPluginEngine
             set
             {
                 _PageLayoutControl = value;
+            }
+        }
+
+        public ITOCControlDefault TOCControl
+        {
+            get
+            {
+                return _TOCControl;
+            }
+            set
+            {
+                _TOCControl = value;
             }
         }
 

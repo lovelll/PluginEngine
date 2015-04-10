@@ -51,6 +51,10 @@ namespace MyPluginEngine
         /// </summary>
         IPageLayoutControlDefault PageLayoutControl { get; set; }
         /// <summary>
+        /// 主程序中的TOCControl控件
+        /// </summary>
+        ITOCControlDefault TOCControl { get; set; }
+        /// <summary>
         /// 主程序的名称
         /// </summary>
         string Name { get; }

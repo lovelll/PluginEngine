@@ -9,25 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMainTools", "MyMainTools\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dataPreMenuBar", "dataPreMenuBar\dataPreMenuBar.csproj", "{16E69B2B-3029-4452-AC53-4FBBF21CC174}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLS", "DLS\DLS.csproj", "{CD14A079-8495-4E84-A239-DBB6BA7F7A33}"
+EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 5
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://lkgis.visualstudio.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = MyPluginEngine\\MyPluginEngine.csproj
-		SccProjectName1 = MyPluginEngine
-		SccLocalPath1 = MyPluginEngine
-		SccProjectUniqueName2 = MyMainGIS\\MyMainGIS.csproj
-		SccProjectName2 = MyMainGIS
-		SccLocalPath2 = MyMainGIS
-		SccProjectUniqueName3 = MyMainTools\\MyMainTools.csproj
-		SccProjectName3 = MyMainTools
-		SccLocalPath3 = MyMainTools
-		SccProjectUniqueName4 = dataPreMenuBar\\dataPreMenuBar.csproj
-		SccProjectName4 = dataPreMenuBar
-		SccLocalPath4 = dataPreMenuBar
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -49,6 +33,10 @@ Global
 		{16E69B2B-3029-4452-AC53-4FBBF21CC174}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16E69B2B-3029-4452-AC53-4FBBF21CC174}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16E69B2B-3029-4452-AC53-4FBBF21CC174}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD14A079-8495-4E84-A239-DBB6BA7F7A33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD14A079-8495-4E84-A239-DBB6BA7F7A33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD14A079-8495-4E84-A239-DBB6BA7F7A33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD14A079-8495-4E84-A239-DBB6BA7F7A33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

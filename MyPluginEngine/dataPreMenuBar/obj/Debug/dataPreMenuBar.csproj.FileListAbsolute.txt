@@ -19,3 +19,4 @@ D:\GitHub\PluginEngine\MyPluginEngine\dataPreMenuBar\obj\Debug\dataPreMenuBar.cs
 D:\GitHub\PluginEngine\MyPluginEngine\dataPreMenuBar\obj\Debug\dataPreMenuBar.dll
 D:\GitHub\PluginEngine\MyPluginEngine\dataPreMenuBar\obj\Debug\dataPreMenuBar.pdb
 D:\GitHub\PluginEngine\MyPluginEngine\dataPreMenuBar\obj\Debug\dataPreMenuBar.featureRenderFrm.resources
+D:\GitHub\PluginEngine\MyPluginEngine\dataPreMenuBar\obj\Debug\dataPreMenuBar.GetSymbolByControl.resources
