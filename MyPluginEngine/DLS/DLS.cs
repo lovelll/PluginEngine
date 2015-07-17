@@ -51,12 +51,12 @@ namespace DLS
 
         public string Caption
         {
-            get { return "DLS"; }
+            get { return "土地利用动态模拟"; }
         }
 
         public string Category
         {
-            get { return "DLS"; }
+            get { return "土地利用动态模拟"; }
         }
 
         public bool Checked

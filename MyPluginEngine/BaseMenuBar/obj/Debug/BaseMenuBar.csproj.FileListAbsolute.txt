@@ -22,3 +22,14 @@ D:\GitHub\PluginEngine\MyPluginEngine\BaseMenuBar\obj\Debug\BaseMenuBar.SelectBy
 D:\GitHub\PluginEngine\MyPluginEngine\BaseMenuBar\obj\Debug\BaseMenuBar.csproj.GenerateResource.Cache
 D:\GitHub\PluginEngine\MyPluginEngine\BaseMenuBar\obj\Debug\BaseMenuBar.dll
 D:\GitHub\PluginEngine\MyPluginEngine\BaseMenuBar\obj\Debug\BaseMenuBar.pdb
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\BaseMenuBar\bin\Debug\BaseMenuBar.dll
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\BaseMenuBar\bin\Debug\BaseMenuBar.pdb
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\BaseMenuBar\bin\Debug\MyPluginEngine.dll
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\BaseMenuBar\bin\Debug\MyPluginEngine.pdb
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\BaseMenuBar\obj\Debug\BaseMenuBar.csprojResolveAssemblyReference.cache
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\BaseMenuBar\obj\Debug\BaseMenuBar.featureRenderFrm.resources
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\BaseMenuBar\obj\Debug\BaseMenuBar.GetSymbolByControl.resources
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\BaseMenuBar\obj\Debug\BaseMenuBar.SelectByAttrFrm.resources
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\BaseMenuBar\obj\Debug\BaseMenuBar.csproj.GenerateResource.Cache
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\BaseMenuBar\obj\Debug\BaseMenuBar.dll
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\BaseMenuBar\obj\Debug\BaseMenuBar.pdb

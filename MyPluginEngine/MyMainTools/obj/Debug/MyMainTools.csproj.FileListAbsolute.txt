@@ -14,3 +14,10 @@ D:\GitHub\PluginEngine\MyPluginEngine\MyMainTools\bin\Debug\MyPluginEngine.pdb
 D:\GitHub\PluginEngine\MyPluginEngine\MyMainTools\obj\Debug\MyMainTools.csprojResolveAssemblyReference.cache
 D:\GitHub\PluginEngine\MyPluginEngine\MyMainTools\obj\Debug\MyMainTools.dll
 D:\GitHub\PluginEngine\MyPluginEngine\MyMainTools\obj\Debug\MyMainTools.pdb
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainTools\bin\Debug\MyMainTools.dll
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainTools\bin\Debug\MyMainTools.pdb
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainTools\bin\Debug\MyPluginEngine.dll
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainTools\bin\Debug\MyPluginEngine.pdb
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainTools\obj\Debug\MyMainTools.csprojResolveAssemblyReference.cache
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainTools\obj\Debug\MyMainTools.dll
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainTools\obj\Debug\MyMainTools.pdb
