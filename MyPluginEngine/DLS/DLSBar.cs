@@ -5,7 +5,7 @@ using System.Text;
 using MyPluginEngine;
 
 
-//更新测试lizy 2015/7/17
+//更新测试lizy 2015/7/17  刘坤
 namespace DLS
 {
     public class DLSBar : MyPluginEngine.IMenuDef
