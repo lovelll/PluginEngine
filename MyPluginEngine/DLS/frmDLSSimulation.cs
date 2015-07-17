@@ -291,13 +291,14 @@ namespace DLS
             int iLanduseType = 5;
 
             //ILayer pLayer = null;
-            IRaster pRaster =new RasterClass();
+            IRaster pRaster = new RasterClass();
 
             IGeoDataset pGdsMask = null;
             IGeoDataset pGdsRstraint = null;
             IGeoDataset pGdsLanduse = null;
             IGeoDataset pGdsDriverFactor = null;
             IRasterBandCollection pRasterBandColection=(new RasterClass()) as IRasterBandCollection;
+            
             //try
             //{
                 string sLyrMask = this.cmbBoundary.Text;
@@ -310,8 +311,8 @@ namespace DLS
                     {
                         if (pLyr.Name == sLyrMask)
                         {
-                            pRaster = (pLyr as IRasterLayer).Raster;
-                            pGdsMask = pRaster as IGeoDataset;
+                            //pRaster = (pLyr as IRasterLayer).Raster;
+                            pGdsMask = (pLyr as IRasterLayer).Raster as IGeoDataset;
                         }
                     }
                 }
@@ -320,25 +321,33 @@ namespace DLS
                 string sLyrRstraint = this.cmbBoundary.Text;
                 //土地利用数据
                 string sLyrLanduse = this.lsbLayerLandUse.Items[0].ToString();
-                lsbNames.Add(sLyrLanduse.Remove(sLyrLanduse.LastIndexOf(".")));;
-                //驱动因子
-                string[] arr = new string[this.lsbLayerDriverFactor.Items.Count];
-                
-                for (int i = 0; i < this.lsbLayerDriverFactor.Items.Count; i++) 
+
+                // 土地利用数据与驱动因子 数据名称(去除格式名)
+                // 顺序不能改变  后面 ITable2DTable 使用这个列表进行了名称替换
+                lsbNames.Add(sLyrLanduse.Remove(sLyrLanduse.LastIndexOf(".")));
+                foreach (string name in lsbLayerDriverFactor.Items)
                 {
-                    arr[i]=this.lsbLayerDriverFactor.Items[i].ToString();
+                    lsbNames.Add(name.Remove(name.LastIndexOf("."))); //去除文件格式 
                 }
+               
+                //驱动因子
+                //string[] arr = new string[this.lsbLayerDriverFactor.Items.Count];
+                
+                //for (int i = 0; i < this.lsbLayerDriverFactor.Items.Count; i++) 
+                //{
+                //    arr[i]=this.lsbLayerDriverFactor.Items[i].ToString();
+                //}
                 
                 for (int i = 0; i < pMap.LayerCount; i++)
                 {
                     ILayer pLyr = pMap.get_Layer(i);
                     if (pLyr is IRasterLayer)
                     {
-                        IRaster curRaster = new RasterClass();
+                        //IRaster curRaster = new RasterClass();
                         if (pLyr.Name == sLyrRstraint)
                         {
-                            curRaster = (pLyr as IRasterLayer).Raster;
-                            pGdsRstraint = curRaster as IGeoDataset;
+                            //curRaster = (pLyr as IRasterLayer).Raster;
+                            pGdsRstraint = (pLyr as IRasterLayer).Raster as IGeoDataset;
                         }
                         
                         //土地利用数据
@@ -347,10 +356,10 @@ namespace DLS
                             this.rtxtState.AppendText("读取土地利用参数数据...\n");
                             this.rtxtState.ScrollToCaret();
                             
-                            curRaster = (pLyr as IRasterLayer).Raster;
-                            pGdsLanduse = curRaster as IGeoDataset;
+                            //curRaster = (pLyr as IRasterLayer).Raster;
+                            pGdsLanduse = (pLyr as IRasterLayer).Raster as IGeoDataset;
                             //land use 添加到 IRasterBandCollection
-                            IRasterBandCollection rasterbands = (IRasterBandCollection)curRaster;
+                            IRasterBandCollection rasterbands = (IRasterBandCollection)(pLyr as IRasterLayer).Raster;
                             IRasterBand rasterband = rasterbands.Item(0);
                             pRasterBandColection.AppendBand(rasterband);
 
@@ -428,20 +437,20 @@ namespace DLS
                             string sFacName = lsbLayerDriverFactor.Items[ifac].ToString();
                             if (pLyr.Name == sFacName)
                             {
-                                IRaster curRaster = new RasterClass();  // 不能使用全局变量
-                                curRaster = (pLyr as IRasterLayer).Raster;
-                                pGdsDriverFactor = curRaster as IGeoDataset;
+                                //IRaster curRaster = new RasterClass();  
+                                //curRaster = (pLyr as IRasterLayer).Raster;
+                                pGdsDriverFactor = (pLyr as IRasterLayer).Raster as IGeoDataset;
 
                                 string ascFileNameFac = strProjectPath + "\\sc1gr"+ifac.ToString()+".grid";
                                 //cov1_0.0;cov1_1.0;
                                 this.rtxtState.AppendText("输出驱动因子数据【" + sFacName + "】\n");
-                                IGeoDataset curMask = null;
-                                curMask = pGdsMask;
-                                Rater2Ascii(curMask, 100, pGdsDriverFactor, ascFileNameFac);
+                                //IGeoDataset curMask = null;
+                                //curMask = pGdsMask;
+                                Rater2Ascii(pGdsMask, 100, pGdsDriverFactor, ascFileNameFac);
                                 this.rtxtState.AppendText("输出驱动因子数据【" + sFacName + "】成功。\n");
                                 this.rtxtState.ScrollToCaret();
                                 //mask 添加到 IRasterBandCollection
-                                IRasterBandCollection rasterbands = (IRasterBandCollection)curRaster;
+                                IRasterBandCollection rasterbands = (IRasterBandCollection)(pLyr as IRasterLayer).Raster;
                                 IRasterBand rasterband = rasterbands.Item(0);
                                 pRasterBandColection.AppendBand(rasterband);
                                 //pRasterBandColection.Add(pRaster as IRasterBand,ifac+1);
@@ -453,30 +462,27 @@ namespace DLS
                 this.rtxtState.AppendText("开始制备驱动因子参数...\n");
                 this.rtxtState.ScrollToCaret();
 
-                IGeoDataset curtestGeo = null;
-                //boundaty-->mask
-                for (int i = 0; i < pMap.LayerCount; i++)
-                {
-                    ILayer pLyr = pMap.get_Layer(i);
-                    if (pLyr is IRasterLayer)
-                    {
-                        if (pLyr.Name == sLyrMask)
-                        {
-                            curtestGeo = ((pLyr as IRasterLayer).Raster) as IGeoDataset;
-                        }
-                    }
-                }
+                //IGeoDataset curtestGeo = null;
+                ////boundaty-->mask
+                //for (int i = 0; i < pMap.LayerCount; i++)
+                //{
+                //    ILayer pLyr = pMap.get_Layer(i);
+                //    if (pLyr is IRasterLayer)
+                //    {
+                //        if (pLyr.Name == sLyrMask)
+                //        {
+                //            curtestGeo = ((pLyr as IRasterLayer).Raster) as IGeoDataset;
+                //        }
+                //    }
+                //}
 
 
                 //sample data
-                ITable itFactors = ExportSample(curtestGeo, pRasterBandColection);
+                ITable itFactors = ExportSample(pGdsMask, pRasterBandColection);
                 
                 //logistic 回归分析
 
-                foreach (string name in lsbLayerDriverFactor.Items)
-                {
-                    lsbNames.Add(name.Remove(name.LastIndexOf("."))); //去除文件名  
-                }
+
                 //lsbNames.AddRange(names);
                 DataTable dtFactors = ITable2DTable(itFactors);
 
@@ -492,7 +498,7 @@ namespace DLS
                 List<string> names = new List<string>();
                 foreach (string name in lsbLayerDriverFactor.Items)
                 {
-                    names.Add(name.Remove(name.LastIndexOf("."))); //去除文件名  
+                    names.Add(name.Remove(name.LastIndexOf("."))); //去除文件格式  
                 } 
                 
 
@@ -565,7 +571,7 @@ namespace DLS
                         var_number = var_number + 1;
                     }
 
-                    
+                    // 保存alloc1.reg 文件
                     sw.WriteLine(st);
                     sw.WriteLine("\t" + Math.Round(lra.CoefficientValues[0], 6));
                     sw.WriteLine(number);
@@ -581,14 +587,7 @@ namespace DLS
                     //progressBar1.Value = var_count + 1;
                 }
                 sw.Close();
-                //System.Windows.Forms.MessageBox.Show("数据回归计算完成");
-                    //// Populate details about the fitted model
-                    //tbChiSquare.Text = lra.ChiSquare.Statistic.ToString("N5");
-                    //tbPValue.Text = lra.ChiSquare.PValue.ToString("N5");
-                    //checkBox1.Checked = lra.ChiSquare.Significant;
-                    //tbDeviance.Text = lra.Deviance.ToString("N5");
-                    //tbLogLikelihood.Text = lra.LogLikelihood.ToString("N5");
-               
+            
                 this.rtxtState.AppendText("制备驱动因子参数成功。\n");
                 this.rtxtState.ScrollToCaret();
                 MessageBox.Show(dtFactors.Rows.Count.ToString());
@@ -636,6 +635,7 @@ namespace DLS
             try
             {
                 SaveFileDialog sfdParameterSave = new SaveFileDialog();
+                sfdParameterSave.InitialDirectory = strProjectPath;
                 sfdParameterSave.Filter = "(*.1)|*.1|" + "(*.txt)|*.txt|" + "(*.*)|*.*";
                 sfdParameterSave.FileName = "main";
 
@@ -649,8 +649,6 @@ namespace DLS
                 MessageBox.Show(ex.Message);
             }
         }
-
-       
 
         private void cmbRstraint_MouseHover(object sender, EventArgs e)
         {
@@ -764,7 +762,7 @@ namespace DLS
         private DataTable ITable2DTable(ITable _pRTable)
         {
             DataTable pTable = new DataTable();
-            //此方法不能使用，
+            //此方法不能使用，对一些字段是不能删除的
             // cannot be removed include:
             //OBJECTID field 
             //SHAPE and shape dependent fields such as SHAPE_Length 
@@ -791,16 +789,11 @@ namespace DLS
                  
              //}
 
-            
-   
-
-             for (int i = 0; i < _pRTable.Fields.FieldCount; i++)
-             {
-                 pTable.Columns.Add(_pRTable.Fields.get_Field(i).Name);
-                 //MessageBox.Show(_pRTable.Fields.get_Field(i).Name);
-             }
-               
-            
+            //将ITable 转化到 DataTable 
+            for (int i = 0; i < _pRTable.Fields.FieldCount; i++)
+            {
+                pTable.Columns.Add(_pRTable.Fields.get_Field(i).Name);
+            }
             ICursor pCursor = _pRTable.Search(null,false);
             IRow pRrow = pCursor.NextRow();
             bool flag = true;
@@ -817,7 +810,6 @@ namespace DLS
                         flag = false;
                         break;
                     }
-                    
                 }
                 if(flag)
                 {
@@ -829,21 +821,19 @@ namespace DLS
 
             // 删除x,y以及之前的列，并对因子列更改列名
             int Yindex = pTable.Columns.IndexOf("y");
-
             for (int i = 0; i <= Yindex; i++) 
             {
                 //MessageBox.Show(pTable.Columns[i].ColumnName);
-                pTable.Columns.RemoveAt(0);   //注意这里不是 i 是 0 每次删除后需要删除的列在第一个
+                //注意这里不是 i 是 0 ;每次删除后需要删除的列在第一个
+                pTable.Columns.RemoveAt(0);   
             };
             int fieldCount = pTable.Columns.Count;
             for (int i = 0; i < fieldCount; i++)
             {
                 pTable.Columns[i].ColumnName = lsbNames[i];
             }
-
-            DataViewTest dt = new DataViewTest(pTable);
-            dt.ShowDialog();
-
+            //DataViewTest dt = new DataViewTest(pTable);
+            //dt.ShowDialog();
             return pTable;
         }
 

@@ -35,11 +35,11 @@ namespace dataPreMenuBar
                     itemDef.ID = "dataPreMenuBar.featureRender";
                     itemDef.Group = false;
                     break;
-              
-                ////case 1:
-                //    //itemDef.ID = "";
-                //    //itemDef.Group = true;
-                //    break;
+
+                case 4:
+                    itemDef.ID = "dataPreMenuBar.pointPicMarker";
+                    itemDef.Group = false;
+                    break;
                 default:
                     break;
 
@@ -48,7 +48,7 @@ namespace dataPreMenuBar
 
         public long ItemCount
         {
-            get { return 4; }
+            get { return 5; }
         }
 
         public string Name

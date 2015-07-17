@@ -113,6 +113,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Library\LayerMenu.cs" />
     <Compile Include="MainGIS.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -43,9 +43,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.cmbBoundary = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.RegressionResult = new System.Windows.Forms.ListBox();
             this.btnRemoveX = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,7 +62,7 @@
             this.btnGenerateInputData = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.rtxtState = new System.Windows.Forms.RichTextBox();
-            this.RegressionResult = new System.Windows.Forms.ListBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -89,7 +88,7 @@
             this.groupBox1.Controls.Add(this.txtParameter);
             this.groupBox1.Location = new System.Drawing.Point(12, 146);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(274, 191);
+            this.groupBox1.Size = new System.Drawing.Size(286, 191);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "3.参数设置";
@@ -139,9 +138,9 @@
             this.groupBox2.Controls.Add(this.btnRstraint);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.cmbRstraint);
-            this.groupBox2.Location = new System.Drawing.Point(12, 343);
+            this.groupBox2.Location = new System.Drawing.Point(12, 344);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(274, 57);
+            this.groupBox2.Size = new System.Drawing.Size(286, 57);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "4.限制区域";
@@ -170,9 +169,9 @@
             this.groupBox3.Controls.Add(this.btnBoundary);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.cmbBoundary);
-            this.groupBox3.Location = new System.Drawing.Point(18, 77);
+            this.groupBox3.Location = new System.Drawing.Point(12, 73);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(274, 56);
+            this.groupBox3.Size = new System.Drawing.Size(286, 56);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "2.研究区域";
@@ -206,10 +205,9 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.RegressionResult);
             this.groupBox4.Controls.Add(this.btnRemoveX);
-            this.groupBox4.Controls.Add(this.button6);
-            this.groupBox4.Controls.Add(this.button5);
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Controls.Add(this.label1);
@@ -226,6 +224,15 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "5.驱动因子";
             // 
+            // RegressionResult
+            // 
+            this.RegressionResult.FormattingEnabled = true;
+            this.RegressionResult.ItemHeight = 12;
+            this.RegressionResult.Location = new System.Drawing.Point(326, 38);
+            this.RegressionResult.Name = "RegressionResult";
+            this.RegressionResult.Size = new System.Drawing.Size(190, 280);
+            this.RegressionResult.TabIndex = 18;
+            // 
             // btnRemoveX
             // 
             this.btnRemoveX.Location = new System.Drawing.Point(145, 198);
@@ -235,25 +242,6 @@
             this.btnRemoveX.Text = "←";
             this.btnRemoveX.UseVisualStyleBackColor = true;
             this.btnRemoveX.Click += new System.EventHandler(this.btnRemoveX_Click);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(152, 298);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(94, 23);
-            this.button6.TabIndex = 16;
-            this.button6.Text = "查看分析结果";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(256, 298);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(106, 23);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "生成驱动因子";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label3
             // 
@@ -309,7 +297,7 @@
             this.lsbLayerDriverFactor.Location = new System.Drawing.Point(180, 110);
             this.lsbLayerDriverFactor.Name = "lsbLayerDriverFactor";
             this.lsbLayerDriverFactor.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.lsbLayerDriverFactor.Size = new System.Drawing.Size(140, 172);
+            this.lsbLayerDriverFactor.Size = new System.Drawing.Size(140, 208);
             this.lsbLayerDriverFactor.Sorted = true;
             this.lsbLayerDriverFactor.TabIndex = 8;
             // 
@@ -329,7 +317,7 @@
             this.lsbLayerAll.Location = new System.Drawing.Point(12, 38);
             this.lsbLayerAll.Name = "lsbLayerAll";
             this.lsbLayerAll.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.lsbLayerAll.Size = new System.Drawing.Size(130, 244);
+            this.lsbLayerAll.Size = new System.Drawing.Size(126, 280);
             this.lsbLayerAll.Sorted = true;
             this.lsbLayerAll.TabIndex = 10;
             // 
@@ -344,7 +332,7 @@
             // 
             // btnSimulation
             // 
-            this.btnSimulation.Location = new System.Drawing.Point(540, 355);
+            this.btnSimulation.Location = new System.Drawing.Point(700, 355);
             this.btnSimulation.Name = "btnSimulation";
             this.btnSimulation.Size = new System.Drawing.Size(126, 37);
             this.btnSimulation.TabIndex = 16;
@@ -357,9 +345,9 @@
             this.groupBox5.Controls.Add(this.btnProjectPath);
             this.groupBox5.Controls.Add(this.txtProjectPath);
             this.groupBox5.Controls.Add(this.label5);
-            this.groupBox5.Location = new System.Drawing.Point(18, 6);
+            this.groupBox5.Location = new System.Drawing.Point(12, 6);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(280, 61);
+            this.groupBox5.Size = new System.Drawing.Size(286, 61);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "1.工程位置";
@@ -392,7 +380,7 @@
             // 
             // btnGenerateInputData
             // 
-            this.btnGenerateInputData.Location = new System.Drawing.Point(408, 355);
+            this.btnGenerateInputData.Location = new System.Drawing.Point(550, 355);
             this.btnGenerateInputData.Name = "btnGenerateInputData";
             this.btnGenerateInputData.Size = new System.Drawing.Size(126, 37);
             this.btnGenerateInputData.TabIndex = 16;
@@ -403,9 +391,9 @@
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.rtxtState);
-            this.groupBox6.Location = new System.Drawing.Point(18, 407);
+            this.groupBox6.Location = new System.Drawing.Point(12, 407);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(760, 104);
+            this.groupBox6.Size = new System.Drawing.Size(816, 104);
             this.groupBox6.TabIndex = 17;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "状态窗口";
@@ -418,18 +406,18 @@
             this.rtxtState.Location = new System.Drawing.Point(3, 17);
             this.rtxtState.Name = "rtxtState";
             this.rtxtState.ReadOnly = true;
-            this.rtxtState.Size = new System.Drawing.Size(754, 84);
+            this.rtxtState.Size = new System.Drawing.Size(810, 84);
             this.rtxtState.TabIndex = 18;
             this.rtxtState.Text = "";
             // 
-            // RegressionResult
+            // label6
             // 
-            this.RegressionResult.FormattingEnabled = true;
-            this.RegressionResult.ItemHeight = 12;
-            this.RegressionResult.Location = new System.Drawing.Point(326, 14);
-            this.RegressionResult.Name = "RegressionResult";
-            this.RegressionResult.Size = new System.Drawing.Size(190, 268);
-            this.RegressionResult.TabIndex = 18;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(327, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 12);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "驱动因子";
             // 
             // frmDLSSimulation
             // 
@@ -484,8 +472,6 @@
         private System.Windows.Forms.ListBox lsbLayerAll;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnParameterSave;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnSimulation;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label5;
@@ -499,5 +485,6 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.RichTextBox rtxtState;
         private System.Windows.Forms.ListBox RegressionResult;
+        private System.Windows.Forms.Label label6;
     }
 }

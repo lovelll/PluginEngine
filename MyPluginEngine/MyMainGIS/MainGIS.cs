@@ -53,6 +53,7 @@ namespace MyMainGIS
         private ControlsSynchronizer m_controlsSynchronizer = null;
         //TOCControl的esriTOOControlItemMap被右键点击后弹出的快捷菜单
         private IToolbarMenu _mapMenu = null;
+        private IToolbarMenu _layerMenu = null;
 
         #endregion
 
@@ -96,10 +97,28 @@ namespace MyMainGIS
 
             //TOCControl的esriTOOControlItemMap被右键点击后弹出的快捷菜单
             _mapMenu = new ToolbarMenuClass();
+            //通过自己的 MapMent进行添加功能，这里只有两个功能
             _mapMenu.AddItem(new MapMenu(), 1, 0, false, esriCommandStyles.esriCommandStyleTextOnly);
             _mapMenu.AddItem(new MapMenu(), 2, 1, false, esriCommandStyles.esriCommandStyleTextOnly);
+            //使用 uid
+            //IUID uid = new UIDClass();
+            //uid.Value = "esriControlCommands.ControlsMapFullExtent";
+            //_mapMenu.AddItem(uid, -1, -1, true, esriCommandStyles.esriCommandStyleIconAndText);
+            _mapMenu.AddItem(new ControlsMapFindCommand(), -1, 2, true, esriCommandStyles.esriCommandStyleIconAndText);
+            //使用 progid
+            string progid = "esriControlCommands.ControlsMapViewMenu";
+            _mapMenu.AddItem(progid, -1, -1, false, esriCommandStyles.esriCommandStyleIconAndText);
+            //使用内置 Command
+            _mapMenu.AddItem(new ControlsAddDataCommand(), -1 , 2, true, esriCommandStyles.esriCommandStyleIconAndText);
             _mapMenu.SetHook(this._mapControl);
-
+            
+            //2015/7/17
+            //TOCControl的esriTOOControlItemLayer被右键点击后弹出的快捷菜单
+            _layerMenu = new ToolbarMenuClass();
+            // 分别为缩放至图层、删除图层   +
+            _layerMenu.AddItem(new LayerMenu(this._mapControl), 1, 0, false, esriCommandStyles.esriCommandStyleTextOnly);
+            _layerMenu.AddItem(new LayerMenu(this._mapControl), 2, 0, false, esriCommandStyles.esriCommandStyleTextOnly);
+            _layerMenu.SetHook(this._mapControl);
         }
 
         #endregion
@@ -747,14 +766,22 @@ namespace MyMainGIS
             {
                 currentIndex = 0;
             }
-            
+
             legend = other;
             currentLayer = layer;
             //确保有项目被选择
             if (item == esriTOCControlItem.esriTOCControlItemMap)
+            {
                 _tocControl.SelectItem(map, null);
-            else
+            }
+            else if (item == esriTOCControlItem.esriTOCControlItemLayer)
+            {
                 _tocControl.SelectItem(layer, null);
+            }
+            //else if (item == esriTOCControlItem.esriTOCControlItemLegendClass)
+            //{
+            //    _tocControl.SelectItem(other, null);
+            //}
 
             //选择的是Map
             if (item == esriTOCControlItem.esriTOCControlItemMap)
@@ -768,11 +795,65 @@ namespace MyMainGIS
                     _mapMenu.PopupMenu(e.x, e.y, _tocControl.hWnd);
                 }
             }
-            //选择的是遥感影像 修改波段 RGB
+            
+
+            //选择的是 Layer
+            if (item == esriTOCControlItem.esriTOCControlItemLayer)
+            {
+                if(e.button == 2)
+                {
+                    this._mapControl.CustomProperty = layer;
+                    _layerMenu.PopupMenu(e.x, e.y, _tocControl.hWnd);
+                }
+
+                /*
+                 //将Layer信息传递给PropertyGrid控件
+                _mapControl.CustomProperty = layer;
+                IFeatureLayer pFeatLyr = layer as IFeatureLayer;
+                if (pFeatLyr == null)
+                    return;
+                MyMainGIS.Library.MapLayerInfo _mapLyrInfo = new MyMainGIS.Library.MapLayerInfo(pFeatLyr, _mapControl.Map);
+                //propertyGrid.SelectedObject = _mapLyrInfo;
+                //_App.StatusBar.Panels[0].Text = "当前选择图层:" + layer.Name;
+
+                //数据表中出现当前图层数据
+                //获取有效的图层名称 a_b被解析为a.b
+                string LayerName = LayerDataTable.getValidFeatureClassName(layer.Name);
+                //判断当前图层是否存在Selection
+                IFeatureSelection pFeatureSelection = layer as IFeatureSelection;
+                if (pFeatureSelection.SelectionSet.Count > 0)
+                {
+                    LayerName += "_Selection";
+                    if (_App.MainDataSet.Tables.Contains(LayerName))
+                    {
+                        _App.MainDataSet.Tables.Remove(LayerName);
+                    }
+                    DataTable dt = LayerDataTable.CreateDataTable(layer, LayerName);
+                    _App.MainDataSet.Tables.Add(dt);
+                }
+                else
+                {
+                    if (!this._App.MainDataSet.Tables.Contains(LayerName))
+                    {
+                        DataTable dt = LayerDataTable.CreateDataTable(layer, LayerName);
+                        _App.MainDataSet.Tables.Add(dt);
+                    }
+                }
+                //bindingSource.DataSource = _App.MainDataSet;
+                //bindingSource.DataMember = LayerName;
+                //dataGridView.DataSource = bindingSource;
+                //DataPanel.Text = "数据表[" + LayerName + "]" + "  记录数：" + _DataSet.Tables[LayerName].Rows.Count.ToString();
+                //dataGridView.Refresh();
+                */
+
+
+            }
+
+            //Legend  选择的是遥感影像 修改波段 RGB
             if (item == esriTOCControlItem.esriTOCControlItemLegendClass && e.button == 1)
             {
                 IRasterLayer pRasterLayer = layer as IRasterLayer;
-                if (pRasterLayer.BandCount > 1) //排除单波段影像。
+                if (pRasterLayer != null && pRasterLayer.BandCount > 1) //判断是影像后排除单波段影像。
                 {
                     BandSelectorMenu.Items.Clear();
                     BandSelectorMenu.Items.Add("不可见");
@@ -828,52 +909,7 @@ namespace MyMainGIS
 
                     BandSelectorMenu.Show(axTOCControl1, e.x, e.y);
                 }
-               
-            }
 
-            //选择的是 Layer
-            if (item == esriTOCControlItem.esriTOCControlItemLayer)
-            {
-                //将Layer信息传递给PropertyGrid控件
-                _mapControl.CustomProperty = layer;
-
-                IFeatureLayer pFeatLyr = layer as IFeatureLayer;
-
-                if (pFeatLyr == null)
-                    return;
-                MyMainGIS.Library.MapLayerInfo _mapLyrInfo = new MyMainGIS.Library.MapLayerInfo(pFeatLyr, _mapControl.Map);
-                //propertyGrid.SelectedObject = _mapLyrInfo;
-
-                //_App.StatusBar.Panels[0].Text = "当前选择图层:" + layer.Name;
-
-                //数据表中出现当前图层数据
-                //获取有效的图层名称 a_b被解析为a.b
-                string LayerName = LayerDataTable.getValidFeatureClassName(layer.Name);
-                //判断当前图层是否存在Selection
-                IFeatureSelection pFeatureSelection = layer as IFeatureSelection;
-                if (pFeatureSelection.SelectionSet.Count > 0)
-                {
-                    LayerName += "_Selection";
-                    if (_App.MainDataSet.Tables.Contains(LayerName))
-                    {
-                        _App.MainDataSet.Tables.Remove(LayerName);
-                    }
-                    DataTable dt = LayerDataTable.CreateDataTable(layer, LayerName);
-                    _App.MainDataSet.Tables.Add(dt);
-                }
-                else
-                {
-                    if (!this._App.MainDataSet.Tables.Contains(LayerName))
-                    {
-                        DataTable dt = LayerDataTable.CreateDataTable(layer, LayerName);
-                        _App.MainDataSet.Tables.Add(dt);
-                    }
-                }
-                //bindingSource.DataSource = _App.MainDataSet;
-                //bindingSource.DataMember = LayerName;
-                //dataGridView.DataSource = bindingSource;
-                //DataPanel.Text = "数据表[" + LayerName + "]" + "  记录数：" + _DataSet.Tables[LayerName].Rows.Count.ToString();
-                //dataGridView.Refresh();
             }
         }
         IRasterRGBRenderer pRGBRender = new RasterRGBRendererClass();
