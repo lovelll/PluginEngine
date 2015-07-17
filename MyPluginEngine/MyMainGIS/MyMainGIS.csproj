@@ -156,10 +156,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\dataPreMenuBar\dataPreMenuBar.csproj">
-      <Project>{16e69b2b-3029-4452-ac53-4fbbf21cc174}</Project>
-      <Name>dataPreMenuBar</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MyMainTools\MyMainTools.csproj">
       <Project>{25eed1dc-c4b1-49a6-9445-4141b688812e}</Project>
       <Name>MyMainTools</Name>

@@ -23,11 +23,9 @@ D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\obj\Debug\MyMainGIS.Properties.R
 D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\obj\Debug\MyMainGIS.csproj.GenerateResource.Cache
 D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\MyMainGIS.exe
 D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\MyMainGIS.pdb
-D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\dataPreMenuBar.dll
 D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\MyMainTools.dll
 D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\MyPluginEngine.dll
 D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\log4net.dll
-D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\dataPreMenuBar.pdb
 D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\MyMainTools.pdb
 D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\MyPluginEngine.pdb
 D:\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\AForge.dll
