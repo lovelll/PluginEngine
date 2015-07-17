@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using MyPluginEngine;
 
+
+//更新测试 2015/7/17
 namespace DLS
 {
     public class DLSBar : MyPluginEngine.IMenuDef
