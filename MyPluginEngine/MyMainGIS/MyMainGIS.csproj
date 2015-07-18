@@ -155,12 +155,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MyMainTools\MyMainTools.csproj">
-      <Project>{25eed1dc-c4b1-49a6-9445-4141b688812e}</Project>
-      <Name>MyMainTools</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
