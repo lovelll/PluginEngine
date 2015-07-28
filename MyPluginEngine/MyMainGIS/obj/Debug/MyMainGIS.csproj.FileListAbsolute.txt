@@ -41,9 +41,7 @@ D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\Accord.IO.dll
 D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\Accord.Math.dll
 D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\Accord.Statistics.dll
 D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\AForge.dll
-D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\MyMainTools.dll
 D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\MyPluginEngine.dll
-D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\MyMainTools.pdb
 D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\MyPluginEngine.pdb
 D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\obj\Debug\MyMainGIS.csprojResolveAssemblyReference.cache
 D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\obj\Debug\MyMainGIS.MainGIS.resources
