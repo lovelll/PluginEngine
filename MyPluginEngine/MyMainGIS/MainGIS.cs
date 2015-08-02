@@ -100,6 +100,8 @@ namespace MyMainGIS
             //通过自己的 MapMent进行添加功能，这里只有两个功能
             _mapMenu.AddItem(new MapMenu(), 1, 0, false, esriCommandStyles.esriCommandStyleTextOnly);
             _mapMenu.AddItem(new MapMenu(), 2, 1, false, esriCommandStyles.esriCommandStyleTextOnly);
+            _mapMenu.AddItem(new MapMenu(), 3, 0, false, esriCommandStyles.esriCommandStyleTextOnly);
+            _mapMenu.AddItem(new MapMenu(), 4, 1, false, esriCommandStyles.esriCommandStyleTextOnly);
             //使用 uid
             //IUID uid = new UIDClass();
             //uid.Value = "esriControlCommands.ControlsMapFullExtent";
@@ -111,13 +113,15 @@ namespace MyMainGIS
             //使用内置 Command
             _mapMenu.AddItem(new ControlsAddDataCommand(), -1 , 2, true, esriCommandStyles.esriCommandStyleIconAndText);
             _mapMenu.SetHook(this._mapControl);
+
             
             //2015/7/17
             //TOCControl的esriTOOControlItemLayer被右键点击后弹出的快捷菜单
             _layerMenu = new ToolbarMenuClass();
-            // 分别为缩放至图层、删除图层   +
+            // 分别为缩放至图层、删除图层、打开属性表   +
             _layerMenu.AddItem(new LayerMenu(this._mapControl), 1, 0, false, esriCommandStyles.esriCommandStyleTextOnly);
             _layerMenu.AddItem(new LayerMenu(this._mapControl), 2, 0, false, esriCommandStyles.esriCommandStyleTextOnly);
+            _layerMenu.AddItem(new LayerMenu(this._mapControl), 3, 0, false, esriCommandStyles.esriCommandStyleTextOnly);
             _layerMenu.SetHook(this._mapControl);
         }
 

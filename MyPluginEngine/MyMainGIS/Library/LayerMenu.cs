@@ -9,6 +9,7 @@ using ESRI.ArcGIS.esriSystem;
 using ESRI.ArcGIS.SystemUI;
 using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.ADF;
+using System.Windows.Forms;
 
 /**
  * author lk 
@@ -44,6 +45,9 @@ namespace MyMainGIS.Library
                 case 2:
                     this.m_mapControl.Extent = this.m_layer.AreaOfInterest;
                     break;
+                case 3:
+                    MessageBox.Show("正在开发中……");
+                    break;
                 default:
                     break;
             }
@@ -58,7 +62,7 @@ namespace MyMainGIS.Library
 
         public int GetCount()
         {
-            return 2;
+            return 3;
         }
 
         public void SetSubType(int SubType)
@@ -78,6 +82,8 @@ namespace MyMainGIS.Library
                         return "删除图层";
                     case 2:
                         return "缩放至图层";
+                    case 3:
+                        return "打开属性表";
                     default:
                         return "";
                 }

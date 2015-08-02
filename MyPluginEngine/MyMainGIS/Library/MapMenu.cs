@@ -41,6 +41,26 @@ namespace MyMainGIS.Library
                             m_hookHelper.FocusMap.get_Layer(i).Visible = true;
                         if (m_subType == 2)
                             m_hookHelper.FocusMap.get_Layer(i).Visible = false;
+                        if (m_subType == 3)
+                        {
+                            ILegendGroup pLengendGroup;
+                            ILegendInfo pLengendInfo = m_hookHelper.FocusMap.get_Layer(i) as ILegendInfo;
+                            for (int j = 0; j < pLengendInfo.LegendGroupCount; j++)
+                            {
+                                pLengendGroup = pLengendInfo.get_LegendGroup(j);
+                                pLengendGroup.Visible = true;
+                            }
+                        }
+                        if (m_subType == 4)
+                        {
+                            ILegendGroup pLengendGroup;
+                            ILegendInfo pLengendInfo = m_hookHelper.FocusMap.get_Layer(i) as ILegendInfo;
+                            for (int j = 0; j < pLengendInfo.LegendGroupCount; j++)
+                            {
+                                pLengendGroup = pLengendInfo.get_LegendGroup(j);
+                                pLengendGroup.Visible = false;
+                            }
+                        }
                     }
                     m_hookHelper.ActiveView.PartialRefresh(esriViewDrawPhase.esriViewGeography, null, null);
                     break;
@@ -58,7 +78,7 @@ namespace MyMainGIS.Library
 
         public int GetCount()
         {
-            return 2;
+            return 4;
         }
 
         public void SetSubType(int SubType)
@@ -78,6 +98,10 @@ namespace MyMainGIS.Library
                         return "显示所有图层";
                     case 2:
                         return "关闭所有图层";
+                    case 3:
+                        return "展开所有图层";
+                    case 4:
+                        return "折叠所有图层";
                     default:
                         return "";
                 }
@@ -109,6 +133,38 @@ namespace MyMainGIS.Library
                             {
                                 enabled = true;
                                 break;
+                            }
+                        }
+                        break;
+                    case 3:
+                        for (i = 0; i <= m_hookHelper.FocusMap.LayerCount - 1; i++)
+                        {
+                            ILegendGroup pLengendGroup;
+                            ILegendInfo pLengendInfo = m_hookHelper.FocusMap.get_Layer(i) as ILegendInfo;
+                            for (int j = 0; j < pLengendInfo.LegendGroupCount; j++)
+                            {
+                                pLengendGroup = pLengendInfo.get_LegendGroup(j);
+                                if (pLengendGroup.Visible == false)
+                                {
+                                    enabled = true;
+                                    break;
+                                }
+                            }
+                        }
+                        break;
+                    case 4:
+                        for (i = 0; i <= m_hookHelper.FocusMap.LayerCount - 1; i++)
+                        {
+                            ILegendGroup pLengendGroup;
+                            ILegendInfo pLengendInfo = m_hookHelper.FocusMap.get_Layer(i) as ILegendInfo;
+                            for (int j = 0; j < pLengendInfo.LegendGroupCount; j++)
+                            {
+                                pLengendGroup = pLengendInfo.get_LegendGroup(j);
+                                if (pLengendGroup.Visible == true)
+                                {
+                                    enabled = true;
+                                    break;
+                                }
                             }
                         }
                         break;
