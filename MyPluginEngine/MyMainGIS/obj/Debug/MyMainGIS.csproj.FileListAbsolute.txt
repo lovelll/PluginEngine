@@ -66,3 +66,4 @@ D:\GitHub\框架\PluginEngine\MyPluginEngine\MyMainGIS\obj\Debug\MyMainGIS.Prope
 D:\GitHub\框架\PluginEngine\MyPluginEngine\MyMainGIS\obj\Debug\MyMainGIS.csproj.GenerateResource.Cache
 D:\GitHub\框架\PluginEngine\MyPluginEngine\MyMainGIS\obj\Debug\MyMainGIS.exe
 D:\GitHub\框架\PluginEngine\MyPluginEngine\MyMainGIS\obj\Debug\MyMainGIS.pdb
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\log4net.dll

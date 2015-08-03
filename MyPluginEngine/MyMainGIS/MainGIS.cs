@@ -100,8 +100,6 @@ namespace MyMainGIS
             //通过自己的 MapMent进行添加功能，这里只有两个功能
             _mapMenu.AddItem(new MapMenu(), 1, 0, false, esriCommandStyles.esriCommandStyleTextOnly);
             _mapMenu.AddItem(new MapMenu(), 2, 1, false, esriCommandStyles.esriCommandStyleTextOnly);
-            _mapMenu.AddItem(new MapMenu(), 3, 0, false, esriCommandStyles.esriCommandStyleTextOnly);
-            _mapMenu.AddItem(new MapMenu(), 4, 1, false, esriCommandStyles.esriCommandStyleTextOnly);
             //使用 uid
             //IUID uid = new UIDClass();
             //uid.Value = "esriControlCommands.ControlsMapFullExtent";
