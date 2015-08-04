@@ -58,10 +58,13 @@ namespace MyMainGIS.Library
                 }
                 //字段添加到表中
                 pDataTable.Columns.Add(pDataColumn);
+                
                 pField = null;
                 pDataColumn = null;
             }
+            
             return pDataTable;
+
         }
 
         /// <summary>
@@ -168,6 +171,7 @@ namespace MyMainGIS.Library
                     }
                 }
                 pDataTable.Rows.Add(pDataRow);
+                int mCount = pDataTable.Rows.Count;
                 pDataRow = null;
 
                 n++;
@@ -180,6 +184,7 @@ namespace MyMainGIS.Library
                     pRow = pCursor.NextRow();
                 }
             }
+            int nCount = pDataTable.Rows.Count;
             return pDataTable;
         }
     }

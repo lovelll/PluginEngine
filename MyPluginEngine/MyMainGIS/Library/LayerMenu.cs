@@ -10,6 +10,7 @@ using ESRI.ArcGIS.SystemUI;
 using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.ADF;
 using System.Windows.Forms;
+using System.Data;
 
 /**
  * author lk 
@@ -46,7 +47,13 @@ namespace MyMainGIS.Library
                     this.m_mapControl.Extent = this.m_layer.AreaOfInterest;
                     break;
                 case 3:
-                    MessageBox.Show("正在开发中……");
+                    if (this.m_layer is IRasterLayer)
+                    {
+                        return;
+                    }
+                    
+                    frmAttributeTable fmAttriTable = new frmAttributeTable(this.m_layer,this.m_mapControl as AxMapControl);
+                    fmAttriTable.ShowDialog();
                     break;
                 default:
                     break;

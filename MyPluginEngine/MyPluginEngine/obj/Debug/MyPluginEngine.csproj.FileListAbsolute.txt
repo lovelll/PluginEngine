@@ -11,12 +11,6 @@ D:\GitHub\PluginEngine\MyPluginEngine\MyPluginEngine\bin\Debug\MyPluginEngine.pd
 D:\GitHub\PluginEngine\MyPluginEngine\MyPluginEngine\bin\Debug\log4net.dll
 D:\GitHub\PluginEngine\MyPluginEngine\MyPluginEngine\obj\Debug\MyPluginEngine.dll
 D:\GitHub\PluginEngine\MyPluginEngine\MyPluginEngine\obj\Debug\MyPluginEngine.pdb
-D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyPluginEngine\bin\Debug\MyPluginEngine.dll.config
-D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyPluginEngine\bin\Debug\MyPluginEngine.dll
-D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyPluginEngine\bin\Debug\MyPluginEngine.pdb
-D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyPluginEngine\obj\Debug\MyPluginEngine.csprojResolveAssemblyReference.cache
-D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyPluginEngine\obj\Debug\MyPluginEngine.dll
-D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyPluginEngine\obj\Debug\MyPluginEngine.pdb
 D:\GitHub\框架\PluginEngine\MyPluginEngine\MyPluginEngine\bin\Debug\MyPluginEngine.dll.config
 D:\GitHub\框架\PluginEngine\MyPluginEngine\MyPluginEngine\bin\Debug\MyPluginEngine.dll
 D:\GitHub\框架\PluginEngine\MyPluginEngine\MyPluginEngine\bin\Debug\MyPluginEngine.pdb
@@ -24,3 +18,10 @@ D:\GitHub\框架\PluginEngine\MyPluginEngine\MyPluginEngine\bin\Debug\log4net.dl
 D:\GitHub\框架\PluginEngine\MyPluginEngine\MyPluginEngine\obj\Debug\MyPluginEngine.csprojResolveAssemblyReference.cache
 D:\GitHub\框架\PluginEngine\MyPluginEngine\MyPluginEngine\obj\Debug\MyPluginEngine.dll
 D:\GitHub\框架\PluginEngine\MyPluginEngine\MyPluginEngine\obj\Debug\MyPluginEngine.pdb
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyPluginEngine\bin\Debug\MyPluginEngine.dll.config
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyPluginEngine\bin\Debug\MyPluginEngine.dll
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyPluginEngine\bin\Debug\MyPluginEngine.pdb
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyPluginEngine\bin\Debug\log4net.dll
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyPluginEngine\obj\Debug\MyPluginEngine.csprojResolveAssemblyReference.cache
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyPluginEngine\obj\Debug\MyPluginEngine.dll
+D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyPluginEngine\obj\Debug\MyPluginEngine.pdb

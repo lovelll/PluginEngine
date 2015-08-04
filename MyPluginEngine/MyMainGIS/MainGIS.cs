@@ -808,14 +808,14 @@ namespace MyMainGIS
                     _layerMenu.PopupMenu(e.x, e.y, _tocControl.hWnd);
                 }
 
-                /*
+                /**
                  //将Layer信息传递给PropertyGrid控件
                 _mapControl.CustomProperty = layer;
                 IFeatureLayer pFeatLyr = layer as IFeatureLayer;
                 if (pFeatLyr == null)
                     return;
                 MyMainGIS.Library.MapLayerInfo _mapLyrInfo = new MyMainGIS.Library.MapLayerInfo(pFeatLyr, _mapControl.Map);
-                //propertyGrid.SelectedObject = _mapLyrInfo;
+                propertyGrid.SelectedObject = _mapLyrInfo;
                 //_App.StatusBar.Panels[0].Text = "当前选择图层:" + layer.Name;
 
                 //数据表中出现当前图层数据
@@ -841,11 +841,11 @@ namespace MyMainGIS
                         _App.MainDataSet.Tables.Add(dt);
                     }
                 }
-                //bindingSource.DataSource = _App.MainDataSet;
-                //bindingSource.DataMember = LayerName;
-                //dataGridView.DataSource = bindingSource;
+                bindingSource.DataSource = _App.MainDataSet;
+                bindingSource.DataMember = LayerName;
+                dataGridView.DataSource = bindingSource;
                 //DataPanel.Text = "数据表[" + LayerName + "]" + "  记录数：" + _DataSet.Tables[LayerName].Rows.Count.ToString();
-                //dataGridView.Refresh();
+                dataGridView.Refresh();
                 */
 
 
