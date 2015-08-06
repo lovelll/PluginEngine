@@ -52,7 +52,7 @@ namespace MyMainGIS.Library
                         return;
                     }
                     
-                    frmAttributeTable fmAttriTable = new frmAttributeTable(this.m_layer,this.m_mapControl as AxMapControl);
+                    frmAttributeTable fmAttriTable = new frmAttributeTable(this.m_layer,this.m_mapControl as MapControl);
                     fmAttriTable.ShowDialog();
                     break;
                 default:

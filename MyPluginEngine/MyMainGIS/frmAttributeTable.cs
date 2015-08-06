@@ -19,9 +19,9 @@ namespace MyMainGIS
     public partial class frmAttributeTable : Form
     {
         private ILayer m_layer;
-        private AxMapControl m_MapControl;
+        private MapControl m_MapControl;
         System.Data.DataTable pDataTable = new System.Data.DataTable();
-        public frmAttributeTable(ILayer layer,AxMapControl pMapControl)
+        public frmAttributeTable(ILayer layer,MapControl pMapControl)
         {
             InitializeComponent();
             this.m_layer = layer;
@@ -176,20 +176,24 @@ namespace MyMainGIS
 
         private void dataGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            long strflag = Convert.ToInt64(dataGridView.SelectedRows[0].Cells[0].Value.ToString());
-            string filename = pDataTable.Columns[0].ToString();
-
-            if (filename == "FID")
+            if (dataGridView.SelectedRows[0].Cells[0].Value.ToString() != "")
             {
+                long strflag = Convert.ToInt64(dataGridView.SelectedRows[0].Cells[0].Value.ToString());
+                string filename = pDataTable.Columns[0].ToString();
 
-                FilterLayer("FID=" + strflag + "");
+                if (filename == "FID")
+                {
+
+                    FilterLayer("FID=" + strflag + "");
+                }
+                else
+                {
+
+
+                    FilterLayer("OBJECTID=" + strflag + "");
+                }
             }
-            else
-            {
 
-
-                FilterLayer("OBJECTID=" + strflag + "");
-            }
         }
     }
 }
