@@ -44,39 +44,35 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 15);
+            this.label1.Size = new System.Drawing.Size(77, 12);
             this.label1.TabIndex = 18;
             this.label1.Text = "选择样式库：";
             // 
             // cbxStyles
             // 
             this.cbxStyles.FormattingEnabled = true;
-            this.cbxStyles.Location = new System.Drawing.Point(125, 8);
-            this.cbxStyles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxStyles.Location = new System.Drawing.Point(94, 6);
             this.cbxStyles.Name = "cbxStyles";
-            this.cbxStyles.Size = new System.Drawing.Size(405, 23);
+            this.cbxStyles.Size = new System.Drawing.Size(305, 20);
             this.cbxStyles.TabIndex = 17;
             this.cbxStyles.SelectedIndexChanged += new System.EventHandler(this.cbxStyles_SelectedIndexChanged);
             // 
             // btnOtherStyles
             // 
-            this.btnOtherStyles.Location = new System.Drawing.Point(540, 5);
-            this.btnOtherStyles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOtherStyles.Location = new System.Drawing.Point(405, 4);
             this.btnOtherStyles.Name = "btnOtherStyles";
-            this.btnOtherStyles.Size = new System.Drawing.Size(53, 31);
+            this.btnOtherStyles.Size = new System.Drawing.Size(40, 25);
             this.btnOtherStyles.TabIndex = 16;
             this.btnOtherStyles.Text = "其它";
             this.btnOtherStyles.Click += new System.EventHandler(this.btnOtherStyles_Click);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(601, 281);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Location = new System.Drawing.Point(451, 225);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(87, 31);
+            this.btnClose.Size = new System.Drawing.Size(65, 25);
             this.btnClose.TabIndex = 15;
             this.btnClose.Text = "关 闭";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -84,11 +80,9 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.axSymbologyControl1);
-            this.groupBox3.Location = new System.Drawing.Point(19, 44);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Location = new System.Drawing.Point(14, 35);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox3.Size = new System.Drawing.Size(575, 388);
+            this.groupBox3.Size = new System.Drawing.Size(431, 310);
             this.groupBox3.TabIndex = 13;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Symbology";
@@ -97,36 +91,34 @@
             // 
             this.axSymbologyControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.axSymbologyControl1.Location = new System.Drawing.Point(3, 17);
-            this.axSymbologyControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.axSymbologyControl1.Name = "axSymbologyControl1";
             this.axSymbologyControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axSymbologyControl1.OcxState")));
-            this.axSymbologyControl1.Size = new System.Drawing.Size(531, 363);
+            this.axSymbologyControl1.Size = new System.Drawing.Size(425, 290);
             this.axSymbologyControl1.TabIndex = 0;
             this.axSymbologyControl1.OnItemSelected += new ESRI.ArcGIS.Controls.ISymbologyControlEvents_Ax_OnItemSelectedEventHandler(this.axSymbologyControl1_OnItemSelected);
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(601, 159);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOK.Location = new System.Drawing.Point(451, 127);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(87, 31);
+            this.btnOK.Size = new System.Drawing.Size(65, 25);
             this.btnOK.TabIndex = 14;
             this.btnOK.Text = "确 定";
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // ColorRampForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(695, 454);
+            this.BackColor = System.Drawing.Color.LightGray;
+            this.ClientSize = new System.Drawing.Size(521, 363);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxStyles);
             this.Controls.Add(this.btnOtherStyles);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnOK);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DoubleBuffered = true;
             this.Name = "ColorRampForm";
             this.Text = "选择色带";
             this.Load += new System.EventHandler(this.ColorRampForm_Load);

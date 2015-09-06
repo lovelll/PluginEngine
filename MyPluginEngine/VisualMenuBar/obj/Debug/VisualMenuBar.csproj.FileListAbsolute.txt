@@ -50,7 +50,6 @@ D:\77211356\GitHub\PluginEngine\MyPluginEngine\VisualMenuBar\bin\Debug\VisualMen
 D:\77211356\GitHub\PluginEngine\MyPluginEngine\VisualMenuBar\bin\Debug\VisualMenuBar.pdb
 D:\77211356\GitHub\PluginEngine\MyPluginEngine\VisualMenuBar\bin\Debug\ESRI.ArcGIS.ADF.dll
 D:\77211356\GitHub\PluginEngine\MyPluginEngine\VisualMenuBar\bin\Debug\MyPluginEngine.dll
-D:\77211356\GitHub\PluginEngine\MyPluginEngine\VisualMenuBar\bin\Debug\log4net.dll
 D:\77211356\GitHub\PluginEngine\MyPluginEngine\VisualMenuBar\bin\Debug\MyPluginEngine.pdb
 D:\77211356\GitHub\PluginEngine\MyPluginEngine\VisualMenuBar\bin\Debug\ESRI.ArcGIS.ADF.xml
 D:\77211356\GitHub\PluginEngine\MyPluginEngine\VisualMenuBar\obj\Debug\VisualMenuBar.csprojResolveAssemblyReference.cache

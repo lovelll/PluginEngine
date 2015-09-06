@@ -12,7 +12,7 @@ using System.IO;
 
 namespace VisualMenuBar
 {
-    public partial class ColorRampForm : Form
+    public partial class ColorRampForm : DevComponents.DotNetBar.OfficeForm
     {
         public IStyleGalleryItem m_styleGalleryItem = null;
         string stylesPath = string.Empty;
@@ -20,6 +20,15 @@ namespace VisualMenuBar
         public ColorRampForm()
         {
             InitializeComponent();
+            //禁用Glass主题
+            this.EnableGlass = false;
+            //不显示最大化最小化按钮
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            //
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            //去除图标
+            this.ShowIcon = false;
         }
 
         private void ColorRampForm_Load(object sender, EventArgs e)

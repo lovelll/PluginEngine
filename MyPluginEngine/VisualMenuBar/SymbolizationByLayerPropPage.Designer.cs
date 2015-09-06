@@ -36,10 +36,9 @@
             // 
             // btnSymbolize
             // 
-            this.btnSymbolize.Location = new System.Drawing.Point(59, 64);
-            this.btnSymbolize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSymbolize.Location = new System.Drawing.Point(44, 51);
             this.btnSymbolize.Name = "btnSymbolize";
-            this.btnSymbolize.Size = new System.Drawing.Size(97, 29);
+            this.btnSymbolize.Size = new System.Drawing.Size(73, 23);
             this.btnSymbolize.TabIndex = 13;
             this.btnSymbolize.Text = "符号化";
             this.btnSymbolize.UseVisualStyleBackColor = true;
@@ -47,10 +46,9 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(217, 64);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Location = new System.Drawing.Point(163, 51);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(97, 29);
+            this.btnClose.Size = new System.Drawing.Size(73, 23);
             this.btnClose.TabIndex = 12;
             this.btnClose.Text = "关 闭";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -59,34 +57,32 @@
             // cbxLayers2Symbolize
             // 
             this.cbxLayers2Symbolize.FormattingEnabled = true;
-            this.cbxLayers2Symbolize.Location = new System.Drawing.Point(159, 20);
-            this.cbxLayers2Symbolize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxLayers2Symbolize.Location = new System.Drawing.Point(119, 16);
             this.cbxLayers2Symbolize.Name = "cbxLayers2Symbolize";
-            this.cbxLayers2Symbolize.Size = new System.Drawing.Size(200, 23);
+            this.cbxLayers2Symbolize.Size = new System.Drawing.Size(151, 20);
             this.cbxLayers2Symbolize.TabIndex = 11;
             this.cbxLayers2Symbolize.SelectedIndexChanged += new System.EventHandler(this.cbxLayers2Symbolize_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 24);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(12, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 15);
+            this.label2.Size = new System.Drawing.Size(101, 12);
             this.label2.TabIndex = 10;
             this.label2.Text = "选择符号化图层：";
             // 
             // SymbolizationByLayerPropPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(408, 119);
+            this.BackColor = System.Drawing.Color.LightGray;
+            this.ClientSize = new System.Drawing.Size(306, 95);
             this.Controls.Add(this.btnSymbolize);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.cbxLayers2Symbolize);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DoubleBuffered = true;
             this.Name = "SymbolizationByLayerPropPage";
             this.Text = "空间数据符号化";
             this.Load += new System.EventHandler(this.SymbolizationByLayerPropPage_Load);

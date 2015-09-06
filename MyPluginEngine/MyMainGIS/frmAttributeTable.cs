@@ -13,10 +13,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.Office.Interop.Excel;
 
 namespace MyMainGIS
 {
-    public partial class frmAttributeTable : Form
+    public partial class frmAttributeTable : DevComponents.DotNetBar.OfficeForm
     {
         private ILayer m_layer;
         private MapControl m_MapControl;
@@ -26,6 +27,15 @@ namespace MyMainGIS
             InitializeComponent();
             this.m_layer = layer;
             this.m_MapControl = pMapControl;
+            //禁用Glass主题
+            this.EnableGlass = false;
+            //不显示最大化最小化按钮
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            //
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            //去除图标
+            this.ShowIcon = false;
         }
 
         private void frmAttributeTable_Load(object sender, EventArgs e)
@@ -194,6 +204,117 @@ namespace MyMainGIS
                 }
             }
 
+        }
+
+        /// <summary>
+        /// 保存EXCEL事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel files(*.xlsx)|*.xlsx|Excel files(*.xls)|*.xls|CSV files (*.csv)|*.csv";
+            saveFileDialog.FilterIndex = 1;
+            saveFileDialog.RestoreDirectory = true;
+            saveFileDialog.Title = "导出属性表";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    ExportForDataGridview(dataGridView, saveFileDialog.FileName, false);
+                    MessageBox.Show("保存成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 由DataGridView导出EXCEL
+        /// </summary>
+        /// <param name="gridView"></param>
+        /// <param name="fileName"></param>
+        /// <param name="isShowExcle"></param>
+        /// <returns></returns>
+        public static bool ExportForDataGridview(DataGridView gridView, string fileName, bool isShowExcle)
+        {
+
+            //建立EXCEL对象
+            Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
+            try
+            {
+                if (app == null)
+                {
+                    return false;
+                }
+
+                app.Visible = isShowExcle;
+                Workbooks workbooks = app.Workbooks;
+                _Workbook workbook = workbooks.Add(XlWBATemplate.xlWBATWorksheet);
+                Sheets sheets = workbook.Worksheets;
+                _Worksheet worksheet = (_Worksheet)sheets.get_Item(1);
+                if (worksheet == null)
+                {
+                    return false;
+                }
+                string sLen = "";
+                //取得最后一列列名
+                char H = (char)(64 + gridView.ColumnCount / 26);
+                char L = (char)(64 + gridView.ColumnCount % 26);
+                if (gridView.ColumnCount < 26)
+                {
+                    sLen = L.ToString();
+                }
+                else
+                {
+                    sLen = H.ToString() + L.ToString();
+                }
+
+
+                //标题
+                string sTmp = sLen + "1";
+                Range ranCaption = worksheet.get_Range(sTmp, "A1");
+                string[] asCaption = new string[gridView.ColumnCount];
+                for (int i = 0; i < gridView.ColumnCount; i++)
+                {
+                    asCaption[i] = gridView.Columns[i].HeaderText;
+                }
+                ranCaption.Value2 = asCaption;
+
+                //数据
+                object[] obj = new object[gridView.Columns.Count];
+                for (int r = 0; r < gridView.RowCount - 1; r++)
+                {
+                    for (int l = 0; l < gridView.Columns.Count; l++)
+                    {
+                        if (gridView[l, r].ValueType == typeof(DateTime))
+                        {
+                            obj[l] = gridView[l, r].Value.ToString();
+                        }
+                        else
+                        {
+                            obj[l] = gridView[l, r].Value;
+                        }
+                    }
+                    string cell1 = sLen + ((int)(r + 2)).ToString();
+                    string cell2 = "A" + ((int)(r + 2)).ToString();
+                    Range ran = worksheet.get_Range(cell1, cell2);
+                    ran.Value2 = obj;
+                }
+                //保存
+                workbook.SaveCopyAs(fileName);
+                workbook.Saved = true;
+            }
+            finally
+            {
+                //关闭
+                app.UserControl = false;
+                app.Quit();
+            }
+            return true;
         }
     }
 }

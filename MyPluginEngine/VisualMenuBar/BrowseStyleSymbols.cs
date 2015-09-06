@@ -15,7 +15,7 @@ using System.Drawing.Drawing2D;
 
 namespace VisualMenuBar
 {
-    public partial class BrowseStyleSymbols : Form
+    public partial class BrowseStyleSymbols : DevComponents.DotNetBar.OfficeForm
     {
         public IStyleGalleryItem m_styleGalleryItem = null;
 
@@ -26,6 +26,15 @@ namespace VisualMenuBar
         public BrowseStyleSymbols()
         {
             InitializeComponent();
+            //禁用Glass主题
+            this.EnableGlass = false;
+            //不显示最大化最小化按钮
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            //
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            //去除图标
+            this.ShowIcon = false;
         }
 
         private void BrowseStyleSymbols_Load(object sender, EventArgs e)

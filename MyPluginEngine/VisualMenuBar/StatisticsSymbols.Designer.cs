@@ -64,10 +64,9 @@
             // btnSelectBackGroud
             // 
             this.btnSelectBackGroud.BackColor = System.Drawing.Color.Bisque;
-            this.btnSelectBackGroud.Location = new System.Drawing.Point(263, 44);
-            this.btnSelectBackGroud.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSelectBackGroud.Location = new System.Drawing.Point(197, 35);
             this.btnSelectBackGroud.Name = "btnSelectBackGroud";
-            this.btnSelectBackGroud.Size = new System.Drawing.Size(171, 29);
+            this.btnSelectBackGroud.Size = new System.Drawing.Size(128, 23);
             this.btnSelectBackGroud.TabIndex = 30;
             this.btnSelectBackGroud.Text = "选择背景...";
             this.btnSelectBackGroud.UseVisualStyleBackColor = false;
@@ -76,10 +75,9 @@
             // btnSelectColorRamp
             // 
             this.btnSelectColorRamp.BackColor = System.Drawing.Color.Bisque;
-            this.btnSelectColorRamp.Location = new System.Drawing.Point(53, 44);
-            this.btnSelectColorRamp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSelectColorRamp.Location = new System.Drawing.Point(40, 35);
             this.btnSelectColorRamp.Name = "btnSelectColorRamp";
-            this.btnSelectColorRamp.Size = new System.Drawing.Size(171, 29);
+            this.btnSelectColorRamp.Size = new System.Drawing.Size(128, 23);
             this.btnSelectColorRamp.TabIndex = 33;
             this.btnSelectColorRamp.Text = "选择色带...";
             this.btnSelectColorRamp.UseVisualStyleBackColor = false;
@@ -90,11 +88,9 @@
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.nudDotSize);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(19, 274);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Location = new System.Drawing.Point(14, 219);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(448, 70);
+            this.groupBox2.Size = new System.Drawing.Size(336, 56);
             this.groupBox2.TabIndex = 32;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "符号设置";
@@ -102,10 +98,9 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Bisque;
-            this.button1.Location = new System.Drawing.Point(244, 25);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(183, 20);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 29);
+            this.button1.Size = new System.Drawing.Size(128, 23);
             this.button1.TabIndex = 23;
             this.button1.Text = "属  性...";
             this.button1.UseVisualStyleBackColor = false;
@@ -114,8 +109,7 @@
             // nudDotSize
             // 
             this.nudDotSize.DecimalPlaces = 2;
-            this.nudDotSize.Location = new System.Drawing.Point(133, 25);
-            this.nudDotSize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nudDotSize.Location = new System.Drawing.Point(100, 20);
             this.nudDotSize.Maximum = new decimal(new int[] {
             200,
             0,
@@ -127,7 +121,7 @@
             0,
             65536});
             this.nudDotSize.Name = "nudDotSize";
-            this.nudDotSize.Size = new System.Drawing.Size(72, 25);
+            this.nudDotSize.Size = new System.Drawing.Size(54, 21);
             this.nudDotSize.TabIndex = 20;
             this.nudDotSize.Value = new decimal(new int[] {
             20,
@@ -138,10 +132,9 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(32, 30);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(24, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 15);
+            this.label3.Size = new System.Drawing.Size(95, 12);
             this.label3.TabIndex = 5;
             this.label3.Text = "符号大小：";
             // 
@@ -154,21 +147,18 @@
             this.groupBox1.Controls.Add(this.btnOut);
             this.groupBox1.Controls.Add(this.btnIn);
             this.groupBox1.Controls.Add(this.lstSourceFields);
-            this.groupBox1.Location = new System.Drawing.Point(19, 82);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(14, 66);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(448, 182);
+            this.groupBox1.Size = new System.Drawing.Size(336, 146);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "字段";
             // 
             // lvRendererFields
             // 
-            this.lvRendererFields.Location = new System.Drawing.Point(263, 45);
-            this.lvRendererFields.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lvRendererFields.Location = new System.Drawing.Point(197, 36);
             this.lvRendererFields.Name = "lvRendererFields";
-            this.lvRendererFields.Size = new System.Drawing.Size(169, 124);
+            this.lvRendererFields.Size = new System.Drawing.Size(128, 100);
             this.lvRendererFields.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.lvRendererFields.TabIndex = 25;
             this.lvRendererFields.UseCompatibleStateImageBehavior = false;
@@ -177,30 +167,27 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(268, 22);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(201, 18);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(142, 15);
+            this.label5.Size = new System.Drawing.Size(113, 12);
             this.label5.TabIndex = 25;
             this.label5.Text = "用于符号化的字段：";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 22);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(14, 18);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 15);
+            this.label4.Size = new System.Drawing.Size(65, 12);
             this.label4.TabIndex = 24;
             this.label4.Text = "所有字段：";
             // 
             // btnAllOut
             // 
             this.btnAllOut.Image = ((System.Drawing.Image)(resources.GetObject("btnAllOut.Image")));
-            this.btnAllOut.Location = new System.Drawing.Point(199, 129);
-            this.btnAllOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAllOut.Location = new System.Drawing.Point(149, 103);
             this.btnAllOut.Name = "btnAllOut";
-            this.btnAllOut.Size = new System.Drawing.Size(47, 29);
+            this.btnAllOut.Size = new System.Drawing.Size(35, 23);
             this.btnAllOut.TabIndex = 3;
             this.btnAllOut.UseVisualStyleBackColor = true;
             this.btnAllOut.Click += new System.EventHandler(this.btnAllOut_Click);
@@ -208,10 +195,9 @@
             // btnOut
             // 
             this.btnOut.Image = ((System.Drawing.Image)(resources.GetObject("btnOut.Image")));
-            this.btnOut.Location = new System.Drawing.Point(199, 92);
-            this.btnOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOut.Location = new System.Drawing.Point(149, 74);
             this.btnOut.Name = "btnOut";
-            this.btnOut.Size = new System.Drawing.Size(47, 29);
+            this.btnOut.Size = new System.Drawing.Size(35, 23);
             this.btnOut.TabIndex = 2;
             this.btnOut.UseVisualStyleBackColor = true;
             this.btnOut.Click += new System.EventHandler(this.btnOut_Click);
@@ -219,10 +205,9 @@
             // btnIn
             // 
             this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
-            this.btnIn.Location = new System.Drawing.Point(199, 56);
-            this.btnIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnIn.Location = new System.Drawing.Point(149, 45);
             this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(47, 29);
+            this.btnIn.Size = new System.Drawing.Size(35, 23);
             this.btnIn.TabIndex = 1;
             this.btnIn.UseVisualStyleBackColor = true;
             this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
@@ -230,21 +215,19 @@
             // lstSourceFields
             // 
             this.lstSourceFields.FormattingEnabled = true;
-            this.lstSourceFields.ItemHeight = 15;
-            this.lstSourceFields.Location = new System.Drawing.Point(13, 45);
-            this.lstSourceFields.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lstSourceFields.ItemHeight = 12;
+            this.lstSourceFields.Location = new System.Drawing.Point(10, 36);
             this.lstSourceFields.Name = "lstSourceFields";
-            this.lstSourceFields.Size = new System.Drawing.Size(169, 124);
+            this.lstSourceFields.Size = new System.Drawing.Size(128, 100);
             this.lstSourceFields.Sorted = true;
             this.lstSourceFields.TabIndex = 0;
             this.lstSourceFields.DoubleClick += new System.EventHandler(this.lstSourceFields_DoubleClick);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(317, 454);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Location = new System.Drawing.Point(238, 363);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(88, 29);
+            this.btnClose.Size = new System.Drawing.Size(66, 23);
             this.btnClose.TabIndex = 28;
             this.btnClose.Text = "关 闭";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -252,10 +235,9 @@
             // 
             // btnSymbolize
             // 
-            this.btnSymbolize.Location = new System.Drawing.Point(317, 400);
-            this.btnSymbolize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSymbolize.Location = new System.Drawing.Point(238, 320);
             this.btnSymbolize.Name = "btnSymbolize";
-            this.btnSymbolize.Size = new System.Drawing.Size(88, 29);
+            this.btnSymbolize.Size = new System.Drawing.Size(66, 23);
             this.btnSymbolize.TabIndex = 27;
             this.btnSymbolize.Text = "符号化";
             this.btnSymbolize.UseVisualStyleBackColor = true;
@@ -268,40 +250,36 @@
             "饼状图",
             "柱状图",
             "堆积柱状图"});
-            this.cbxSymbolizeMethds.Location = new System.Drawing.Point(361, 8);
-            this.cbxSymbolizeMethds.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxSymbolizeMethds.Location = new System.Drawing.Point(271, 6);
             this.cbxSymbolizeMethds.Name = "cbxSymbolizeMethds";
-            this.cbxSymbolizeMethds.Size = new System.Drawing.Size(104, 23);
+            this.cbxSymbolizeMethds.Size = new System.Drawing.Size(79, 20);
             this.cbxSymbolizeMethds.TabIndex = 26;
             this.cbxSymbolizeMethds.SelectedIndexChanged += new System.EventHandler(this.cbxSymbolizeMethds_SelectedIndexChanged);
             // 
             // cbxLayers2Symbolize
             // 
             this.cbxLayers2Symbolize.FormattingEnabled = true;
-            this.cbxLayers2Symbolize.Location = new System.Drawing.Point(79, 8);
-            this.cbxLayers2Symbolize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxLayers2Symbolize.Location = new System.Drawing.Point(59, 6);
             this.cbxLayers2Symbolize.Name = "cbxLayers2Symbolize";
-            this.cbxLayers2Symbolize.Size = new System.Drawing.Size(173, 23);
+            this.cbxLayers2Symbolize.Size = new System.Drawing.Size(131, 20);
             this.cbxLayers2Symbolize.TabIndex = 25;
             this.cbxLayers2Symbolize.SelectedIndexChanged += new System.EventHandler(this.cbxLayers2Symbolize_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(257, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(193, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 15);
+            this.label1.Size = new System.Drawing.Size(77, 12);
             this.label1.TabIndex = 24;
             this.label1.Text = "符号化方法：";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 11);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 15);
+            this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 23;
             this.label2.Text = "图层：";
             // 
@@ -310,8 +288,7 @@
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(19, 360);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(14, 288);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(180, 120);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -346,10 +323,10 @@
             // 
             // StatisticsSymbols
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(520, 558);
+            this.BackColor = System.Drawing.Color.LightGray;
+            this.ClientSize = new System.Drawing.Size(390, 446);
             this.Controls.Add(this.btnSelectBackGroud);
             this.Controls.Add(this.btnSelectColorRamp);
             this.Controls.Add(this.groupBox2);
@@ -361,7 +338,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DoubleBuffered = true;
             this.Name = "StatisticsSymbols";
             this.Text = "统计符号化";
             this.Load += new System.EventHandler(this.StatisticsSymbols_Load);

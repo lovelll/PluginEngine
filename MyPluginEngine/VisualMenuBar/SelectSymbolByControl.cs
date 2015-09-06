@@ -12,7 +12,7 @@ using ESRI.ArcGIS.Controls;
 
 namespace VisualMenuBar
 {
-    public partial class SelectSymbolByControl : Form
+    public partial class SelectSymbolByControl : DevComponents.DotNetBar.OfficeForm
     {
         public IStyleGalleryItem m_styleGalleryItem = null;
         string stylesPath = string.Empty;
@@ -23,6 +23,15 @@ namespace VisualMenuBar
         {
             InitializeComponent();
             styleClass = strStyleClass;
+            //禁用Glass主题
+            this.EnableGlass = false;
+            //不显示最大化最小化按钮
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            //
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            //去除图标
+            this.ShowIcon = false;
         }
 
 

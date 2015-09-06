@@ -67,7 +67,7 @@
             "自然裂点分类",
             "几何间隔分类"});
             this.classifyCBX.Location = new System.Drawing.Point(138, 214);
-            this.classifyCBX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.classifyCBX.Margin = new System.Windows.Forms.Padding(2);
             this.classifyCBX.Name = "classifyCBX";
             this.classifyCBX.Size = new System.Drawing.Size(116, 20);
             this.classifyCBX.TabIndex = 31;
@@ -297,7 +297,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MistyRose;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(457, 269);
             this.Controls.Add(this.classifyCBX);
             this.Controls.Add(this.groupBox3);
@@ -310,6 +310,7 @@
             this.Controls.Add(this.btnSymbolize);
             this.Controls.Add(this.cbxLayers2Symbolize);
             this.Controls.Add(this.label2);
+            this.DoubleBuffered = true;
             this.Name = "GraduatedSymbols";
             this.Text = "分级符号符号化";
             this.Load += new System.EventHandler(this.GraduatedSymbols_Load);
