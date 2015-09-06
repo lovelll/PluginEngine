@@ -64,7 +64,6 @@ D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\Accord.Math.d
 D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\Accord.Statistics.dll
 D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\AForge.dll
 D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\MyPluginEngine.dll
-D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\log4net.dll
 D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\MyPluginEngine.pdb
 D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\obj\Debug\MyMainGIS.exe
 D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\obj\Debug\MyMainGIS.pdb

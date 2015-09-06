@@ -58,7 +58,6 @@
             this.dataGridView.RowTemplate.Height = 23;
             this.dataGridView.Size = new System.Drawing.Size(784, 562);
             this.dataGridView.TabIndex = 0;
-            //this.dataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_CellMouseClick);
             this.dataGridView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_RowHeaderMouseDoubleClick);
             // 
             // bindingNavigator1
@@ -173,7 +172,7 @@
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.dataGridView);
             this.Name = "frmAttributeTable";
-            this.Text = "frmAttributeTable";
+            this.Text = "属性表";
             this.Load += new System.EventHandler(this.frmAttributeTable_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
