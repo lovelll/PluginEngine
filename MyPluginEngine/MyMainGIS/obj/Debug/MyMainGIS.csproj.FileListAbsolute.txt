@@ -42,7 +42,6 @@ D:\GitHub\框架\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\Accord.Math.dll
 D:\GitHub\框架\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\Accord.Statistics.dll
 D:\GitHub\框架\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\AForge.dll
 D:\GitHub\框架\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\MyPluginEngine.dll
-D:\GitHub\框架\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\log4net.dll
 D:\GitHub\框架\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\MyPluginEngine.pdb
 D:\GitHub\框架\PluginEngine\MyPluginEngine\MyMainGIS\obj\Debug\MyMainGIS.csprojResolveAssemblyReference.cache
 D:\GitHub\框架\PluginEngine\MyPluginEngine\MyMainGIS\obj\Debug\MyMainGIS.MainGIS.resources
@@ -67,3 +66,10 @@ D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\MyPluginEngin
 D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\MyPluginEngine.pdb
 D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\obj\Debug\MyMainGIS.exe
 D:\77211356\GitHub\PluginEngine\MyPluginEngine\MyMainGIS\obj\Debug\MyMainGIS.pdb
+D:\GitHub\框架\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\Microsoft.Office.Interop.Excel.dll
+D:\GitHub\框架\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\office.dll
+D:\GitHub\框架\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\Microsoft.Vbe.Interop.dll
+D:\GitHub\框架\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\Microsoft.Office.Interop.Excel.xml
+D:\GitHub\框架\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\office.xml
+D:\GitHub\框架\PluginEngine\MyPluginEngine\MyMainGIS\obj\Debug\MyMainGIS.frmAttributeTable.resources
+D:\GitHub\框架\PluginEngine\MyPluginEngine\MyMainGIS\bin\Debug\log4net.dll

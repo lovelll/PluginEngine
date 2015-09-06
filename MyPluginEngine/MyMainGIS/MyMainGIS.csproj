@@ -95,6 +95,9 @@
     <Reference Include="ESRI.ArcGIS.Version, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\OtherDll\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
@@ -116,7 +119,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAttributeTable.cs" />
+    <Compile Include="frmAttributeTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmAttributeTable.Designer.cs">
       <DependentUpon>frmAttributeTable.cs</DependentUpon>
     </Compile>
